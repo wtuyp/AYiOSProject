@@ -1,0 +1,9 @@
+${PODS_ROOT}/Target Support Files/Pods-AYiOSProject/Pods-AYiOSProject-resources.sh
+${PODS_ROOT}/BRPickerView/BRPickerView/AddressPickerView/BRAddressPickerView.bundle
+${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.bundle
+${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.Privacy.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle
+${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle
