@@ -75,27 +75,6 @@
     }
 }
 
-- (void)setViewEmptyDataStateConfigWithImage:(UIImage *)image title:(NSString *)title {
-    AYDataStateConfig *emptyDataConfig = [self.dataStateView configForState:[self stateStringWithState:AYDataStateEmptyData]];
-    emptyDataConfig.image = image;
-    emptyDataConfig.title = title;
-}
-
-- (void)setViewEmptyDataStateConfigWithImage:(UIImage * _Nullable)image {
-    AYDataStateConfig *emptyDataConfig = [self.dataStateView configForState:[self stateStringWithState:AYDataStateEmptyData]];
-    emptyDataConfig.image = image;
-}
-
-- (void)setViewEmptyDataStateConfigWithTitle:(NSString * _Nullable)title {
-    AYDataStateConfig *emptyDataConfig = [self.dataStateView configForState:[self stateStringWithState:AYDataStateEmptyData]];
-    emptyDataConfig.title = title;
-}
-
-- (void)setViewErrorDataStateConfigWithBtnActionBlock:(void (^)(void))btnActionBlock {
-    AYDataStateConfig *errorDataConfig = [self.dataStateView configForState:[self stateStringWithState:AYDataStateErrorData]];
-    errorDataConfig.btnActionBlock = btnActionBlock;
-}
-
 #pragma mark - public
 
 - (void)setViewDataStateConfig:(AYDataStateConfig * _Nullable)config forState:(AYDataState)state {
@@ -104,6 +83,10 @@
 
 - (AYDataStateConfig * _Nullable)viewDataStateConfigForState:(AYDataState)state {
     return [self.dataStateView configForState:[self stateStringWithState:state]];
+}
+
+- (void)updateViewDataStateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(AYDataState)state {
+    [self.dataStateView updateConfig:configBlock forState:[self stateStringWithState:state]];
 }
 
 #pragma mark - private

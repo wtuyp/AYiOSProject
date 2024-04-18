@@ -23,16 +23,12 @@ typedef NS_ENUM(NSInteger, AYDataState) {
 
 /// 设置状态配置
 - (void)setViewDataStateConfig:(AYDataStateConfig * _Nullable)config forState:(AYDataState)state;
+
 /// 获取状态配置
 - (AYDataStateConfig * _Nullable)viewDataStateConfigForState:(AYDataState)state;
 
-/// 设置空数据状态的图片和标题
-- (void)setViewEmptyDataStateConfigWithImage:(UIImage * _Nullable)image title:(NSString * _Nullable)title;
-- (void)setViewEmptyDataStateConfigWithImage:(UIImage * _Nullable)image;
-- (void)setViewEmptyDataStateConfigWithTitle:(NSString * _Nullable)title;
-
-/// 设置错误数据状态的按键动作
-- (void)setViewErrorDataStateConfigWithBtnActionBlock:(void (^)(void))btnActionBlock;
+/// 更新状态配置
+- (void)updateViewDataStateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(AYDataState)state;
 
 @end
 

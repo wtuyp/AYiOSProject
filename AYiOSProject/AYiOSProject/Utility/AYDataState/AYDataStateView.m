@@ -124,6 +124,11 @@
     return [self.stateDic objectForKey:state];
 }
 
+- (void)updateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(NSString *)state {
+    AYDataStateConfig *config = [self configForState:state];
+    !configBlock ?: configBlock(config);
+}
+
 - (void)showWithState:(NSString *)state {
     self.state = state;
     if (!self.attachedView) {
@@ -139,6 +144,7 @@
     if (!isCustomSubview) {
         AYDataStateConfig *config = [self configForState:state];
         if (!config) {
+            [self removeFromSuperview];
             return;
         }
         
