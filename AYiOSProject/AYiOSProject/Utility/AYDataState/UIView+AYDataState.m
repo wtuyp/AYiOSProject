@@ -45,15 +45,14 @@
     AYDataStateView *view = objc_getAssociatedObject(self, _cmd);
     if (!view) {
         view = [[AYDataStateView alloc] initWithAttachedView:self];
-        
+        view.centerOffset = CGPointMake(0, -(SAFE_BOTTOM + 50));
+
         AYDataStateConfig *emptyDataConfig = [AYDataStateConfig defaultEmptyDataConfig];
         AYDataStateConfig *errorDataConfig = [AYDataStateConfig defaultErrorDataConfig];
         
-        [view setConfig:emptyDataConfig forState:[self stateStringWithState:AYDataStateEmptyData]];
-        [view setConfig:errorDataConfig forState:[self stateStringWithState:AYDataStateErrorData]];
-        
-        view.centerOffset = CGPointMake(0, -50);
-        
+        [view setConfig:emptyDataConfig forState:AYViewDataStateEmptyData];
+        [view setConfig:errorDataConfig forState:AYViewDataStateErrorData];
+                
         self.dataStateView = view;
     }
     return view;
@@ -63,36 +62,12 @@
     objc_setAssociatedObject(self, @selector(dataStateView), dataStateView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (AYDataState)viewDataState {
-    return (AYDataState)self.dataStateView.state.integerValue;
+- (AYViewDataState)viewDataState {
+    return self.dataStateView.state;
 }
 
-- (void)setViewDataState:(AYDataState)viewDataState {
-    if (viewDataState != AYDataStateHidden) {
-        [self.dataStateView showWithState:[self stateStringWithState:viewDataState]];
-    } else {
-        [self.dataStateView hidden];
-    }
-}
-
-#pragma mark - public
-
-- (void)setViewDataStateConfig:(AYDataStateConfig * _Nullable)config forState:(AYDataState)state {
-    [self.dataStateView setConfig:config forState:[self stateStringWithState:state]];
-}
-
-- (AYDataStateConfig * _Nullable)viewDataStateConfigForState:(AYDataState)state {
-    return [self.dataStateView configForState:[self stateStringWithState:state]];
-}
-
-- (void)updateViewDataStateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(AYDataState)state {
-    [self.dataStateView updateConfig:configBlock forState:[self stateStringWithState:state]];
-}
-
-#pragma mark - private
-
-- (NSString *)stateStringWithState:(AYDataState)state {
-    return [@(state) stringValue];
+- (void)setViewDataState:(AYViewDataState)viewDataState {
+    [self.dataStateView showWithState:viewDataState];
 }
 
 @end

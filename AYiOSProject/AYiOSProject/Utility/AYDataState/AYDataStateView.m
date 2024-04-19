@@ -14,8 +14,8 @@
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) UIButton *actionBtn;
 
-@property (nonatomic, strong) NSMutableDictionary<NSString *, AYDataStateConfig *> *stateDic;
-@property (nonatomic, copy, nullable) NSString *state;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, AYDataStateConfig *> *stateConfigDic;
+@property (nonatomic, assign) AYViewDataState state;
 
 @end
 
@@ -48,8 +48,7 @@
 }
 
 - (void)setupInit {
-    self.stateDic = [[NSMutableDictionary alloc] init];
-    self.centerOffset = CGPointMake(0, -SAFE_BOTTOM);
+    self.stateConfigDic = [[NSMutableDictionary alloc] init];
 }
 
 - (void)updateUI {
@@ -112,24 +111,24 @@
 
 #pragma mark - public
 
-- (void)setConfig:(AYDataStateConfig *)config forState:(NSString *)state {
+- (void)setConfig:(AYDataStateConfig *)config forState:(AYViewDataState)state {
     if (config) {
-        [self.stateDic setObject:config forKey:state];
+        [self.stateConfigDic setObject:config forKey:@(state)];
     } else {
-        [self.stateDic removeObjectForKey:state];
+        [self.stateConfigDic removeObjectForKey:@(state)];
     }
 }
 
-- (AYDataStateConfig *)configForState:(NSString *)state {
-    return [self.stateDic objectForKey:state];
+- (AYDataStateConfig *)configForState:(AYViewDataState)state {
+    return [self.stateConfigDic objectForKey:@(state)];
 }
 
-- (void)updateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(NSString *)state {
+- (void)updateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(AYViewDataState)state {
     AYDataStateConfig *config = [self configForState:state];
     !configBlock ?: configBlock(config);
 }
 
-- (void)showWithState:(NSString *)state {
+- (void)showWithState:(AYViewDataState)state {
     self.state = state;
     if (!self.attachedView) {
         [self removeFromSuperview];
@@ -156,12 +155,6 @@
         make.center.mas_offset(self.centerOffset);
     }];
 }
-
-- (void)hidden {
-    self.state = nil;
-    [self removeFromSuperview];
-}
-
 
 #pragma mark - private
 
