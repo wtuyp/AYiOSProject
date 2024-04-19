@@ -17,10 +17,10 @@
 
 // log 打印
 #ifdef DEBUG
-    #define NSLog(...)          NSLog(__VA_ARGS__)
+    #define NSLog(fmt, ...)     printf("%s: %d %s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String])
     #define printf(...)         printf(__VA_ARGS__)
 #else
-    #define NSLog(...)
+    #define NSLog(fmt, ...)
     #define printf(...)
 #endif
 
