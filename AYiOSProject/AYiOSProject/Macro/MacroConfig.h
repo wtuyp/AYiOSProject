@@ -24,6 +24,8 @@
 #define DEFAULT_BG_COLOR                COLOR_HEX(#F7F7F7)
 // 默认图片背景色
 #define DEFAULT_IMAGE_BG_COLOR          COLOR_HEX(#ECECEC)
+// 默认图片
+#define DEFAULT_IMAGE                   IMAGE(@"icon_default_100")
 
 /// 时间戳使用毫秒，1:使用，0:不使用
 #define TIMESTAMP_MILLISECOND_ENABLE    1

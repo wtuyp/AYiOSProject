@@ -17,7 +17,7 @@
 
 // log 打印
 #ifdef DEBUG
-    #define NSLog(fmt, ...)     printf("%s: %d %s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String])
+    #define NSLog(fmt, ...)     printf("%s: %d >>> %s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String])
     #define printf(...)         printf(__VA_ARGS__)
 #else
     #define NSLog(fmt, ...)
@@ -30,7 +30,6 @@
 // 生成 UIImage
 #define IMAGE(name)             [UIImage imageNamed:name]//.scaleImage
 #define IMAGE_COLOR(color)      [UIImage imageWithColor:(color)]
-#define IMAGE_DEFAULT           IMAGE(@"icon_default_100")
 
 // String
 #define STRING_FORMAT(f, ...)   [NSString stringWithFormat:f, ## __VA_ARGS__]
