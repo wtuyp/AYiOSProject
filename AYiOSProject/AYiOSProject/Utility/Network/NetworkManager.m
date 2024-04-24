@@ -11,12 +11,6 @@ NSString *const NetworkResponseParamStatusCode = @"code";
 NSString *const NetworkResponseParamMessage = @"msg";
 NSString *const NetworkResponseParamData = @"data";
 
-#ifdef DEBUG
-    #define CLog(FORMAT, ...) fprintf(stderr, "%s\n", [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String])
-#else
-    #define CLog(FORMAT, ...)
-#endif
-
 @interface NetworkManager ()
 
 @property (nonatomic, assign) NetworkReachableStatus reachableStatus;
@@ -99,7 +93,7 @@ NSString *const NetworkResponseParamData = @"data";
           error:(NSError * _Nullable)error {
 
     if(!task) {
-        CLog(@"请求任务不存在");
+        NSLog(@"请求任务不存在");
         return;
     }
     
@@ -115,7 +109,7 @@ NSString *const NetworkResponseParamData = @"data";
     if ([task.response isKindOfClass:[NSHTTPURLResponse class]]) {
         statusCode = [(NSHTTPURLResponse *)task.response statusCode];
     }
-    CLog(@"--------------------\nRequest response:%@ [%.3f s] code: %li\nurl: %@\n%@\n--------------------",
+    NSLog(@"\n--------------------\nRequest response:%@ [%.3f s] code: %li\nurl: %@\n%@\n--------------------",
          [requestStartDate stringWithFormat:@"yyyy-MM-dd HH:mm:ss.SSS"],
          duration,
          (long)statusCode,
@@ -157,7 +151,7 @@ NSString *const NetworkResponseParamData = @"data";
                     responseData = [class yy_modelWithDictionary:responseDic];
                 }
             } else {
-//                CLog(@"--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
+//                NSLog(@"\n--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
 //                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", responseData);
 //                return;
             }

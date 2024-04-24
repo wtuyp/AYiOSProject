@@ -32,7 +32,7 @@
 #define IMAGE_COLOR(color)      [UIImage imageWithColor:(color)]
 
 // String
-#define STRING_FORMAT(f, ...)   [NSString stringWithFormat:f, ## __VA_ARGS__]
+#define STRING_FORMAT(fmt, ...) [NSString stringWithFormat:fmt, ##__VA_ARGS__]
 #define STRING_SAFE(str)        (str && [str isKindOfClass:NSString.class] ? str : @"")
 #define STRING_SAFE_DEFAULT(str, default)   (str && [str isKindOfClass:NSString.class] ? str : (default ?: @""))
 

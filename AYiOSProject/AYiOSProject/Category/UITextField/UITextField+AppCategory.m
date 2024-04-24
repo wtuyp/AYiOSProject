@@ -34,7 +34,7 @@
 }
 
 - (void)setMoneyConfig {
-    self.keyboardType = UIKeyboardTypeNumberPad;
+    self.keyboardType = UIKeyboardTypeDecimalPad;
     self.zg_isPrice = YES;
     self.zg_priceIntLength = 9;
 }
