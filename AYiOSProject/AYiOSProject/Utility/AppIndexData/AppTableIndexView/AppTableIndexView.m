@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *selectedString;
 
 @property (nonatomic, assign) CGPoint touchPoint;
+@property (nonatomic, assign) CGRect reactionBounds;
 @property (nonatomic, strong) UIImpactFeedbackGenerator *generator; ///< 触感反馈
 
 @end
@@ -46,8 +47,14 @@
     self.trackBarRadius = 8;
     
     self.itemTextColor = COLOR_HEX(#323232);
-    self.itemFont = FONT(10);
+    self.itemTextFont = FONT(10);
+    
     self.itemSpace = 8;
+    self.itemSize = 16;
+    
+    self.itemSelectedTextColor = COLOR_HEX(#000000);
+    self.itemSelectedBgColor = UIColor.clearColor;
+    self.itemBgCornerRadius = 3;
 
     [self updateUI];
 }
@@ -59,23 +66,41 @@
 
 #pragma mark - override
 
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(self.trackBarWidth, (self.stringArray.count + 1) * self.itemSize);
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint point = [[touches anyObject] locationInView:self];
     
+    if (!CGRectContainsPoint(self.bounds, point)) {
+        return;
+    }
+    
     __block NSInteger index = -1;
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    __block UILabel *selectedLabel = nil;
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (CGRectContainsPoint([self extentedFrameWithView:obj], point)) {
             index = idx;
-            *stop = YES;
+            selectedLabel = obj;
+            obj.textColor = self.itemSelectedTextColor;
+            obj.backgroundColor = self.itemSelectedBgColor;
+        } else {
+            obj.textColor = self.itemTextColor;
+            obj.backgroundColor = UIColor.clearColor;
         }
     }];
-    
+        
     if (index != -1) {
+        [self.generator impactOccurred];
         
         NSString *letter = self.stringArray[index];
         self.selectedString = letter;
-        [self.generator impactOccurred];
-        self.touchPoint = point;
+        self.touchPoint = selectedLabel.center;
+
+        if (self.indicatorView.superview) {
+            [self.indicatorView showIndicatorWithText:letter];
+        }
         
         if ([self.delegate respondsToSelector:@selector(appTableIndexView:text:index:)]) {
             [self.delegate appTableIndexView:self text:letter index:index];
@@ -85,24 +110,39 @@
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint point = [[touches anyObject] locationInView:self];
+    
+    if (!CGRectContainsPoint(self.bounds, point)) {
+        return;
+    }
 
     __block NSInteger index = -1;
-    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    __block UILabel *selectedLabel = nil;
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (CGRectContainsPoint([self extentedFrameWithView:obj], point)) {
             index = idx;
-            *stop = YES;
+            selectedLabel = obj;
+            obj.textColor = self.itemSelectedTextColor;
+            obj.backgroundColor = self.itemSelectedBgColor;
+        } else {
+            obj.textColor = self.itemTextColor;
+            obj.backgroundColor = UIColor.clearColor;
         }
     }];
-    
+
     if (index != -1) {
         NSString *letter = self.stringArray[index];
         if ([self.selectedString isEqualToString:letter]) {
             return;
         }
         
-        self.selectedString = letter;
         [self.generator impactOccurred];
-        self.touchPoint = point;
+        
+        self.selectedString = letter;
+        self.touchPoint = selectedLabel.center;
+
+        if (self.indicatorView.superview) {
+            [self.indicatorView showIndicatorWithText:letter];
+        }
         
         if ([self.delegate respondsToSelector:@selector(appTableIndexView:text:index:)]) {
             [self.delegate appTableIndexView:self text:letter index:index];
@@ -111,13 +151,20 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.indicatorView.superview) {
+        [self.indicatorView dismissIndicator];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(appTableIndexViewEndAction)]) {
         [self.delegate appTableIndexViewEndAction];
     }
 }
 
-#pragma mark - getter
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self touchesEnded:touches withEvent:event];
+}
 
+#pragma mark - getter
 
 - (UIImpactFeedbackGenerator *)generator {
     if (!_generator) {
@@ -161,18 +208,32 @@
     [self removeAllSubviews];
     
     for (NSString *string in self.stringArray) {
-        UILabel *textLabel = [UILabel labelWithColor:self.itemTextColor font:self.itemFont text:string];
+        UILabel *textLabel = [UILabel labelWithColor:self.itemTextColor font:self.itemTextFont text:string];
         textLabel.textAlignment = NSTextAlignmentCenter;
+        [textLabel setCornerRadius:self.itemBgCornerRadius clip:YES];
         [self addSubview:textLabel];
     }
     
-    [self verticalLayoutSubviewsWithItemWidth:self.trackBarWidth itemHeight:14 itemSpacing:self.itemSpace topSpacing:self.itemSpace / 2.0 bottomSpacing:self.itemSpace / 2.0 leadSpacing:0 tailSpacing:0];
+    [self verticalLayoutCenterAlignSubviewsWithItemWidth:self.itemSize itemHeight:self.itemSize itemSpacing:self.itemSpace topSpacing:self.itemSpace / 2.0 bottomSpacing:self.itemSpace / 2.0];
 }
+
+- (void)itemSelectedWithIndexText:(NSString *)indexText {
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.text isEqualToString:indexText]) {
+            obj.textColor = self.itemSelectedTextColor;
+            obj.backgroundColor = self.itemSelectedBgColor;
+        } else {
+            obj.textColor = self.itemTextColor;
+            obj.backgroundColor = UIColor.clearColor;
+        }
+    }];
+}
+
 
 #pragma mark - private
 
 - (CGRect)extentedFrameWithView:(UIView *)view {
-    UIEdgeInsets touchAreaInsets = UIEdgeInsetsMake(0, 20, 0, 10);
+    UIEdgeInsets touchAreaInsets = UIEdgeInsetsMake(self.itemSpace / 2.0, 20, self.itemSpace / 2.0, 10);
     CGRect frame = view.frame;
     frame = CGRectMake(frame.origin.x - touchAreaInsets.left,
                        frame.origin.y - touchAreaInsets.top,
@@ -185,7 +246,6 @@
 
 @interface AppTableIndexIndicatorView ()
 
-@property (nonatomic, copy) NSString *indicatorText;
 @property (nonatomic, strong) UILabel *textLabel;
 
 @end
@@ -212,11 +272,15 @@
 
 - (void)setupInit {
     self.hidden = YES;
+    
+    self.textColor = COLOR_HEX(#000000);
+    self.textFont = FONT(32);
 
     self.backgroundColor = UIColor.whiteColor;
     [self setCornerRadius:SCALE(24)];
     [self setShadowWithColor:[COLOR_HEX(#30353B) colorWithAlphaComponent:0.1] opacity:1 offset:CGSizeMake(0, 4) radius:10];
     
+    [self.textLabel setColor:self.textColor font:self.textFont];
     [self addSubview:self.textLabel];
     [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.mas_equalTo(0);
@@ -238,9 +302,12 @@
 - (UILabel *)textLabel {
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] init];
-        [_textLabel setColor:COLOR_HEX(#000000) font:FONT(32)];
     }
     return _textLabel;
+}
+
+- (NSString *)indicatorText {
+    return self.textLabel.text;
 }
 
 #pragma mark - setter
@@ -249,6 +316,12 @@
     _textColor = textColor;
     
     self.textLabel.textColor = textColor;
+}
+
+- (void)setTextFont:(UIFont *)textFont {
+    _textFont = textFont;
+    
+    self.textLabel.font = textFont;
 }
 
 #pragma mark - action
@@ -262,8 +335,13 @@
 
 #pragma mark - public
 
+
+#pragma mark - private
+
+
+#pragma mark - AppTableIndexIndicatorViewProtocol
+
 - (void)showIndicatorWithText:(NSString *)text {
-    self.indicatorText = text;
     self.textLabel.text = text;
     self.hidden = NO;
 }
@@ -271,8 +349,5 @@
 - (void)dismissIndicator {
     self.hidden = YES;
 }
-
-#pragma mark - private
-
 
 @end

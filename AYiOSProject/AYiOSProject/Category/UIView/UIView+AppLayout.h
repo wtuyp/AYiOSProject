@@ -81,6 +81,18 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
 - (void)verticalLayoutSubviewsWithItemHeight:(CGFloat)itemHeight
                                  itemSpacing:(CGFloat)itemSpacing;
 
+
+/**
+ 垂直布局，居中对齐。可配置边距。(注意：容器宽度必需固定)
+ 子视图 可配置宽度、高度、间距。
+ itemWidth, itemHeight 为 0，表示自适应。
+ */
+- (void)verticalLayoutCenterAlignSubviewsWithItemWidth:(CGFloat)itemWidth
+                                            itemHeight:(CGFloat)itemHeight
+                                           itemSpacing:(CGFloat)itemSpacing
+                                            topSpacing:(CGFloat)topSpacing
+                                         bottomSpacing:(CGFloat)bottomSpacing;
+
 @end
 
 @interface UIView (AppLayoutHorizontal)

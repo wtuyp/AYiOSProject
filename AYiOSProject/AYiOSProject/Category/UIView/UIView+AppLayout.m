@@ -97,6 +97,42 @@
     [self verticalLayoutSubviewsWithItemHeight:itemHeight itemSpacing:itemSpacing topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
 }
 
+- (void)verticalLayoutCenterAlignSubviewsWithItemWidth:(CGFloat)itemWidth
+                                            itemHeight:(CGFloat)itemHeight
+                                           itemSpacing:(CGFloat)itemSpacing
+                                            topSpacing:(CGFloat)topSpacing
+                                         bottomSpacing:(CGFloat)bottomSpacing {
+    if (self.subviews.count < 1) {
+        return;
+    }
+    
+    UIView *prev = nil;
+    for (NSInteger currentRow = 0; currentRow < self.subviews.count; currentRow++) {
+        UIView *view = self.subviews[currentRow];
+        
+        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            if (itemWidth) {
+                make.width.mas_equalTo(itemWidth);
+            }
+            if (itemHeight) {
+                make.height.mas_equalTo(itemHeight);
+            }
+
+            if (currentRow == 0) {  // 第一行
+                make.top.mas_equalTo(topSpacing);
+            }
+            if (currentRow == self.subviews.count - 1) {    // 最后一行
+                make.bottom.mas_lessThanOrEqualTo(-bottomSpacing);
+            }
+            if (currentRow != 0) { // 非第一行
+                make.top.equalTo(prev.mas_bottom).offset(itemSpacing);
+            }
+        }];
+        prev = view;
+    }
+}
+
 @end
 
 @implementation UIView (AppLayoutHorizontal)

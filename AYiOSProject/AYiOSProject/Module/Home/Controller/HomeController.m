@@ -6,9 +6,14 @@
    
 
 #import "HomeController.h"
+#import "HomeListCell.h"
+
+#import "TableIndexDemoController.h"
 
 @interface HomeController ()
 
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, copy) NSArray *demoInfoArray;
 
 @end
 
@@ -25,18 +30,15 @@
     [self setupSubviews];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-}
-
 #pragma mark - override
 
 
 #pragma mark - data
 
 - (void)setupData {
-    
+    self.demoInfoArray = @[
+        @"TableIndexDemo",
+    ];
 }
 
 #pragma mark - view
@@ -47,28 +49,29 @@
 }
 
 - (void)setupSubviews {
-    UIScrollView *scrollView = [[UIScrollView alloc] init];
-    scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    scrollView.showsVerticalScrollIndicator = NO;
-    
-    WEAK_OBJ(scrollView)
-    scrollView.mj_header = [AppRefreshHeader headerWithRefreshingBlock:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            STRONG_OBJ(scrollView)
-            [scrollView.mj_header endRefreshing];
-        });
-    }];
-    
-    [self.view addSubview:scrollView];
-    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_equalTo(0);
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
-        make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        make.left.right.bottom.inset(0);
     }];
 }
 
 #pragma mark - getter
 
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, TAB_BAR_HEIGHT, 0);
+        _tableView.dataSource = (id<UITableViewDataSource>)self;
+        _tableView.delegate = (id<UITableViewDelegate>)self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        [_tableView registerClass:HomeListCell.class forCellReuseIdentifier:NSStringFromClass(HomeListCell.class)];
+    }
+    return _tableView;
+}
 
 #pragma mark - setter
 
@@ -87,5 +90,35 @@
 
 #pragma mark - private
 
+
+#pragma mark - UITableViewDelegate & UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.demoInfoArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *demoInfo = [self.demoInfoArray objectOrNilAtIndex:indexPath.row];
+    
+    HomeListCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(HomeListCell.class) forIndexPath:indexPath];
+    [cell updateTitle:demoInfo];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSString *demoInfo = [self.demoInfoArray objectOrNilAtIndex:indexPath.row];
+    NSString *controllerName = STRING_FORMAT(@"%@Controller", demoInfo);
+    Class controllerClass = NSClassFromString(controllerName);
+    if (!controllerClass) {
+        NSLog(@"%@ 控制器不存在", controllerName);
+        return;
+    }
+    
+    UIViewController *vc = [[controllerClass alloc] init];
+    NAVI_PUSH_CONTROLLER(self, vc)
+}
 
 @end

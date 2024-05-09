@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		84C21D36310F3A25D48E00DF /* libPods-AYiOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C7DB362D5EE2189D7B41CC /* libPods-AYiOSProject.a */; };
+		EB13DF542BE0E64200068D70 /* HomeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF532BE0E64200068D70 /* HomeListCell.m */; };
+		EB13DF572BE0E64C00068D70 /* DemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF552BE0E64B00068D70 /* DemoModel.m */; };
+		EB13DF5A2BE9FDAA00068D70 /* TableIndexDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF592BE9FDAA00068D70 /* TableIndexDemoController.m */; };
 		EB9F55C12BCCB78900333706 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BA2BCCB78800333706 /* GradientButton.m */; };
 		EB9F55C22BCCB78900333706 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BC2BCCB78800333706 /* GradientView.m */; };
 		EB9F55C32BCCB78900333706 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BF2BCCB78900333706 /* BadgeView.m */; };
@@ -97,6 +100,12 @@
 		158D01BD979FCCB36C230C18 /* Pods-AYiOSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYiOSProject.debug.xcconfig"; path = "Target Support Files/Pods-AYiOSProject/Pods-AYiOSProject.debug.xcconfig"; sourceTree = "<group>"; };
 		54C7DB362D5EE2189D7B41CC /* libPods-AYiOSProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AYiOSProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CAC4D837F2790474A9E9F4 /* Pods-AYiOSProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AYiOSProject.release.xcconfig"; path = "Target Support Files/Pods-AYiOSProject/Pods-AYiOSProject.release.xcconfig"; sourceTree = "<group>"; };
+		EB13DF522BE0E64100068D70 /* HomeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeListCell.h; sourceTree = "<group>"; };
+		EB13DF532BE0E64200068D70 /* HomeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListCell.m; sourceTree = "<group>"; };
+		EB13DF552BE0E64B00068D70 /* DemoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModel.m; sourceTree = "<group>"; };
+		EB13DF562BE0E64C00068D70 /* DemoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModel.h; sourceTree = "<group>"; };
+		EB13DF582BE9FDAA00068D70 /* TableIndexDemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableIndexDemoController.h; path = ../../../../../../../../TableIndexDemoController.h; sourceTree = "<group>"; };
+		EB13DF592BE9FDAA00068D70 /* TableIndexDemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TableIndexDemoController.m; path = ../../../../../../../../TableIndexDemoController.m; sourceTree = "<group>"; };
 		EB9F55B92BCCB78800333706 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		EB9F55BA2BCCB78800333706 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		EB9F55BB2BCCB78800333706 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -320,6 +329,41 @@
 				EB9F55BF2BCCB78900333706 /* BadgeView.m */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		EBC80D522BDB3D5000F7913C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB13DF522BE0E64100068D70 /* HomeListCell.h */,
+				EB13DF532BE0E64200068D70 /* HomeListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBC80D562BDB40D600F7913C /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EBC80D572BDB40E000F7913C /* Controller */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		EBC80D572BDB40E000F7913C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB13DF582BE9FDAA00068D70 /* TableIndexDemoController.h */,
+				EB13DF592BE9FDAA00068D70 /* TableIndexDemoController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EBC80D5B2BDB41AE00F7913C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB13DF562BE0E64C00068D70 /* DemoModel.h */,
+				EB13DF552BE0E64B00068D70 /* DemoModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EBD3C1B42BC7B65E00A24298 = {
@@ -638,6 +682,8 @@
 		EBD3C3132BC7D20300A24298 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EBC80D5B2BDB41AE00F7913C /* Model */,
+				EBC80D522BDB3D5000F7913C /* View */,
 				EBD3C30E2BC7D20300A24298 /* Controller */,
 			);
 			path = Home;
@@ -727,6 +773,7 @@
 		EBD3C40A2BC7D20300A24298 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				EBC80D562BDB40D600F7913C /* Demo */,
 				EBD3C2752BC7D20300A24298 /* Account */,
 				EBD3C3132BC7D20300A24298 /* Home */,
 				EBD3C3322BC7D20300A24298 /* Login */,
@@ -1169,6 +1216,7 @@
 				EBD3C6BF2BC7D20400A24298 /* JXCategoryTitleBackgroundCell.m in Sources */,
 				EBD3C55E2BC7D20400A24298 /* BaseController.m in Sources */,
 				EBD3C54A2BC7D20400A24298 /* CALayer+AppCategory.m in Sources */,
+				EB13DF542BE0E64200068D70 /* HomeListCell.m in Sources */,
 				EBD3C5622BC7D20400A24298 /* AppTabBarItemConfig.m in Sources */,
 				EBD3C54F2BC7D20400A24298 /* NSObject+AppCategory.m in Sources */,
 				EBD3C6C82BC7D20400A24298 /* AppNaviView.m in Sources */,
@@ -1179,6 +1227,7 @@
 				EBD3C5692BC7D20400A24298 /* AccountInfoController.m in Sources */,
 				EBD3C6D02BC7D20400A24298 /* AYLabelView.m in Sources */,
 				EBD3C5BB2BC7D20400A24298 /* LoginController.m in Sources */,
+				EB13DF572BE0E64C00068D70 /* DemoModel.m in Sources */,
 				EBD3C6C52BC7D20400A24298 /* AppTableIndexView.m in Sources */,
 				EBD3C6C32BC7D20400A24298 /* YYWeakProxy.m in Sources */,
 				EBD3C5532BC7D20400A24298 /* UIColor+AppCategory.m in Sources */,
@@ -1190,6 +1239,7 @@
 				EBD3C6C02BC7D20400A24298 /* JXCategoryTitleBackgroundCellModel.m in Sources */,
 				EBD3C5572BC7D20400A24298 /* UINavigationController+AppCategory.m in Sources */,
 				EBD3C62B2BC7D20400A24298 /* AppDelegate+AppManager.m in Sources */,
+				EB13DF5A2BE9FDAA00068D70 /* TableIndexDemoController.m in Sources */,
 				EBD3C5602BC7D20400A24298 /* UIViewController+BaseNavi.m in Sources */,
 				EBD3C5BC2BC7D20400A24298 /* CaptchaValidateController.m in Sources */,
 				EBD3C6D92BC7D20400A24298 /* BasePageResponse.m in Sources */,
