@@ -60,7 +60,7 @@ post_install do |installer|
     end
   end
   # M芯片报错修复
-  installer.pods_project.build_configurations.each do |config|
-    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-  end
+#  installer.pods_project.build_configurations.each do |config|
+#    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+#  end
 end

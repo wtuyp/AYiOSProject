@@ -165,7 +165,7 @@
 
 - (void)setIcon:(NSString * _Nullable)icon title:(NSString * _Nullable)title content:(NSString * _Nullable)content time:(NSString * _Nullable)time {
     if ([icon containsString:@"http"]) {
-        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:icon] placeholderImage:IMAGE_DEFAULT];
+        [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:icon] placeholderImage:IMAGE(@"")];
     } else {
         self.iconImageView.image = IMAGE(icon);
     }
