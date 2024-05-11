@@ -18,26 +18,12 @@
 
 #pragma mark - life
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setupInit];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setupInit];
-    }
-    return self;
-}
-
 - (instancetype)initWithHorizontalInset:(CGFloat)horizontalInset {
     self = [super init];
     if (self) {
         _horizontalInset = horizontalInset;
+        
+        [self setupInit];
     }
     return self;
 }
@@ -45,8 +31,8 @@
 - (void)setupInit {
     [self addSubview:self.textLabel];
     [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(0);
-        make.left.mas_greaterThanOrEqualTo(self.horizontalInset);
+        make.left.right.inset(self.horizontalInset);
+        make.centerY.mas_equalTo(0);
     }];
 }
 
