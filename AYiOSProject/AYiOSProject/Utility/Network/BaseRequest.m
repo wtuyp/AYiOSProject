@@ -5,6 +5,7 @@
 //
 
 #import "BaseRequest.h"
+#import <AFNetworking/AFNetworking.h>
 #import "NetworkManager.h"
 #import "NetworkUrl.h"
 
@@ -119,6 +120,31 @@
     request.failure = self.failure;
     [request startRequest];
     return request;
+}
+
+- (void)setUploadConfigWithKey:(NSString *)key
+                      fileData:(NSData *)fileData
+                      fileName:(NSString *)fileName
+                  fileMIMEType:(NSString *)fileMIMEType {
+    self.constructingBodyBlock = ^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:fileData
+                                    name:key
+                                fileName:fileName
+                                mimeType:fileMIMEType];
+    };
+}
+
+- (void)setUploadConfigWithKey:(NSString *)key
+                      filePath:(NSString *)filePath
+                      fileName:(NSString *)fileName
+                  fileMIMEType:(NSString *)fileMIMEType {
+    self.constructingBodyBlock = ^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileURL:[NSURL fileURLWithPath:filePath] 
+                                   name:key
+                               fileName:fileName
+                               mimeType:fileMIMEType
+                                  error:nil];
+    };
 }
 
 #pragma mark - private

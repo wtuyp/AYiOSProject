@@ -33,6 +33,18 @@ typedef void (^FailureHandler)(NSInteger statusCode, NSString * _Nullable messag
 /// 重试请求，返回一个新的请求实例
 - (__kindof BaseRequest *)retryRequest;
 
+/// 上传文件时配置，使用 NSData
+- (void)setUploadConfigWithKey:(NSString *)key
+                      fileData:(NSData *)fileData
+                      fileName:(NSString *)fileName
+                  fileMIMEType:(NSString *)fileMIMEType;
+
+/// 上传文件时配置，使用 文件路径
+- (void)setUploadConfigWithKey:(NSString *)key
+                      filePath:(NSString *)filePath
+                      fileName:(NSString *)fileName
+                  fileMIMEType:(NSString *)fileMIMEType;
+
 /// 请求时需要忽略的属性名，用于有值但不用发送的时候
 + (NSArray * _Nullable)ignoreRequestModelPropertyNameArray;
 
