@@ -1,5 +1,9 @@
 # AYiOSProject
-平时开发积累而成的iOS工程，基于MVC架构、基于Cocoapods第三方库管理，以YTKNetwork、Masonry、YYModel、MJRefresh、MBProgressHUD、MMKV等库为基础，封装了一些常用工具类、宏定义、常用分类、基类等。让iOS开发变的简单些。
+平时开发积累而成的iOS工程。  
+基于MVC架构、基于Cocoapods第三方库管理，
+以YTKNetwork、Masonry、YYModel、MJRefresh、MBProgressHUD、MMKV等库为基础框架，
+封装了一些常用工具类、宏定义、常用分类、基类等。  
+让iOS开发变的简单些。 
 
 * 最低支持iOS12系统。
 * 暂不支持黑暗模式。
