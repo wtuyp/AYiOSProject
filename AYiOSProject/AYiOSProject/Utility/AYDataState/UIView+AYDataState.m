@@ -50,8 +50,8 @@
         AYDataStateConfig *emptyDataConfig = [AYDataStateConfig defaultEmptyDataConfig];
         AYDataStateConfig *errorDataConfig = [AYDataStateConfig defaultErrorDataConfig];
         
-        [view setConfig:emptyDataConfig forState:AYViewDataStateEmptyData];
-        [view setConfig:errorDataConfig forState:AYViewDataStateErrorData];
+        [view setConfig:emptyDataConfig forState:AYViewDataStateEmpty];
+        [view setConfig:errorDataConfig forState:AYViewDataStateError];
                 
         self.dataStateView = view;
     }

@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ENUM(AYViewDataState) {
     AYViewDataStateHidden = 0,  ///< 隐藏状态
-    AYViewDataStateEmptyData,   ///< 空数据状态
-    AYViewDataStateErrorData,   ///< 错误数据状态（网络异常等引起）
+    AYViewDataStateEmpty,       ///< 空数据状态
+    AYViewDataStateError,       ///< 错误数据状态（网络异常等引起）
 };
 
 /// 数据状态 分类
