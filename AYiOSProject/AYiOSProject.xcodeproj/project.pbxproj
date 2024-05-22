@@ -10,7 +10,7 @@
 		84C21D36310F3A25D48E00DF /* libPods-AYiOSProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C7DB362D5EE2189D7B41CC /* libPods-AYiOSProject.a */; };
 		EB13DF542BE0E64200068D70 /* HomeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF532BE0E64200068D70 /* HomeListCell.m */; };
 		EB13DF572BE0E64C00068D70 /* DemoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF552BE0E64B00068D70 /* DemoModel.m */; };
-		EB13DF5A2BE9FDAA00068D70 /* TableIndexDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB13DF592BE9FDAA00068D70 /* TableIndexDemoController.m */; };
+		EB92093D2BFDE47200D48B32 /* TableIndexDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB92093B2BFDE47200D48B32 /* TableIndexDemoController.m */; };
 		EB9F55C12BCCB78900333706 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BA2BCCB78800333706 /* GradientButton.m */; };
 		EB9F55C22BCCB78900333706 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BC2BCCB78800333706 /* GradientView.m */; };
 		EB9F55C32BCCB78900333706 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BF2BCCB78900333706 /* BadgeView.m */; };
@@ -104,8 +104,8 @@
 		EB13DF532BE0E64200068D70 /* HomeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeListCell.m; sourceTree = "<group>"; };
 		EB13DF552BE0E64B00068D70 /* DemoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModel.m; sourceTree = "<group>"; };
 		EB13DF562BE0E64C00068D70 /* DemoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModel.h; sourceTree = "<group>"; };
-		EB13DF582BE9FDAA00068D70 /* TableIndexDemoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableIndexDemoController.h; path = ../../../../../../../../TableIndexDemoController.h; sourceTree = "<group>"; };
-		EB13DF592BE9FDAA00068D70 /* TableIndexDemoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TableIndexDemoController.m; path = ../../../../../../../../TableIndexDemoController.m; sourceTree = "<group>"; };
+		EB92093B2BFDE47200D48B32 /* TableIndexDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableIndexDemoController.m; sourceTree = "<group>"; };
+		EB92093C2BFDE47200D48B32 /* TableIndexDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableIndexDemoController.h; sourceTree = "<group>"; };
 		EB9F55B92BCCB78800333706 /* GradientButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
 		EB9F55BA2BCCB78800333706 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		EB9F55BB2BCCB78800333706 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
@@ -351,8 +351,8 @@
 		EBC80D572BDB40E000F7913C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB13DF582BE9FDAA00068D70 /* TableIndexDemoController.h */,
-				EB13DF592BE9FDAA00068D70 /* TableIndexDemoController.m */,
+				EB92093C2BFDE47200D48B32 /* TableIndexDemoController.h */,
+				EB92093B2BFDE47200D48B32 /* TableIndexDemoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1239,7 +1239,7 @@
 				EBD3C6C02BC7D20400A24298 /* JXCategoryTitleBackgroundCellModel.m in Sources */,
 				EBD3C5572BC7D20400A24298 /* UINavigationController+AppCategory.m in Sources */,
 				EBD3C62B2BC7D20400A24298 /* AppDelegate+AppManager.m in Sources */,
-				EB13DF5A2BE9FDAA00068D70 /* TableIndexDemoController.m in Sources */,
+				EB92093D2BFDE47200D48B32 /* TableIndexDemoController.m in Sources */,
 				EBD3C5602BC7D20400A24298 /* UIViewController+BaseNavi.m in Sources */,
 				EBD3C5BC2BC7D20400A24298 /* CaptchaValidateController.m in Sources */,
 				EBD3C6D92BC7D20400A24298 /* BasePageResponse.m in Sources */,
