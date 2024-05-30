@@ -455,7 +455,7 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
-//    [super setHighlighted:highlighted];
+    [super setHighlighted:highlighted];
     
     if (highlighted && !self.originBorderColor) {
         // 手指按在按钮上会不断触发setHighlighted:，所以这里做了保护，设置过一次就不用再设置了
