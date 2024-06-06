@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 更新索引数据字典
 - (void)updateIndexDataDic:(NSDictionary<NSString *, NSArray *> *)indexDataDic;
 
+/// 清空索引数据字典
+- (void)clearIndexDataDic;
+
 /// 使用 compare 排序更新索引数组, 如有#则排在最后（索引数据字典完成后调用）
 - (void)updateIndexArrayWithCompareSorted;
 

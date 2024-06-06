@@ -72,6 +72,10 @@ MMMSynthesizeIdCopyProperty(indexArray, setIndexArray)
     [self.indexDataMutableDic addEntriesFromDictionary:indexDataDic];
 }
 
+- (void)clearIndexDataDic {
+    [self.indexDataMutableDic removeAllObjects];
+}
+
 - (void)updateIndexArrayWithCompareSorted {
     self.indexArray = [[self.indexDataMutableDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
     if ([self.indexArray containsObject:@"#"]) {
