@@ -151,9 +151,9 @@ NSString *const NetworkResponseParamData = @"data";
                     responseData = [class yy_modelWithDictionary:responseDic];
                 }
             } else {
-//                NSLog(@"\n--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
-//                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", responseData);
-//                return;
+                NSLog(@"\n--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
+                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", nil);
+                return;
             }
         }
         if (request.success) {
