@@ -1,5 +1,5 @@
 //
-//  MBProgressHUD+Tips.h
+//  MBProgressHUD+AppCategory.h
 //
 //  Created by MMM on 2021/7/6.
 //
@@ -8,9 +8,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern const NSInteger TipsAutomaticallyHideToastSeconds;
+extern const NSInteger AppHUDAutomaticallyHideSeconds;
 
-@interface MBProgressHUD (Tips)
+@interface MBProgressHUD (AppCategory)
 
 #pragma mark - Loading
 
@@ -43,8 +43,8 @@ extern const NSInteger TipsAutomaticallyHideToastSeconds;
 + (void)hideAllTipsInView:(UIView *)view;
 + (void)hideAllTips;
 
-/// 自动隐藏 toast 可以使用这个方法自动计算秒数，20字 1.5s，40字 2.0s，50字 2.5s，以上 3s
-+ (NSTimeInterval)smartDelaySecondsForTipsText:(NSString *)text;
+/// 根据文本长度返回隐藏秒数，20字 2.0s，40字 2.5s，50字 3.0s，以上 3.5s
++ (NSTimeInterval)secondsToHideWithText:(NSString *)text;
 
 @end
 

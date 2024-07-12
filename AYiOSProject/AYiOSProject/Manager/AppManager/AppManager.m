@@ -33,13 +33,6 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
     return manager;
 }
 
-//- (instancetype)init {
-//    self = [super init];
-//    if (self) {
-//    }
-//    return self;
-//}
-
 - (BOOL)isFirstTimeLaunch {
     return [[MMKV defaultMMKV] getBoolForKey:FirstLaunchKey];
 }
@@ -128,6 +121,8 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 }
 
 - (void)accountLogout {
+    [NSNotificationCenter.defaultCenter postNotificationName:NOTIFY_ACCOUNT_LOGOUT object:nil];
+
     [AccountManager.shared logout];
     UIApplication.sharedApplication.applicationIconBadgeNumber = 0;
     
@@ -135,7 +130,6 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
     // ...
     
     [self loadLoginModule];
-    [NSNotificationCenter.defaultCenter postNotificationName:NOTIFY_ACCOUNT_LOGOUT object:nil];
 }
 
 @end

@@ -29,9 +29,11 @@
 #import "AccountManager.h"
 #import "NetworkManager.h"
 
-#import "MBProgressHUD+Tips.h"
+#import "MBProgressHUD+AppCategory.h"
 #import "NSDate+AppCategory.h"
 #import "NSDictionary+AppCategory.h"
+#import "NSObject+AppCategory.h"
+#import "NSObject+YYModelAdd.h"
 #import "NSString+AppCategory.h"
 #import "UIButton+AppCategory.h"
 #import "UIColor+AppCategory.h"
@@ -49,8 +51,6 @@
 #import "UIView+AYPopupController.h"
 #import "UIView+AYDataState.h"
 #import "UIViewController+BaseNavi.h"
-#import "NSObject+AppCategory.h"
-#import "NSObject+YYModelAdd.h"
 
 #import "AppRefreshHeader.h"
 #import "AppRefreshFooterView.h"

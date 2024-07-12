@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, NetworkResponseStatusCode) {
     NetworkResponseStatusCodeDefault = -1000,       ///< 默认
     NetworkResponseStatusCodeSuccess = 200,         ///< 成功
     NetworkResponseStatusCodeOffline = 401,         ///< 触发下线
+    NetworkResponseStatusCodeNoAccess = 403,        ///< 没有访问权限
     NetworkResponseStatusCodeTokenExpired = 4031,   ///< token过期
     NetworkResponseStatusCodeUpgrade = 100003,      ///< 版本更新
 };

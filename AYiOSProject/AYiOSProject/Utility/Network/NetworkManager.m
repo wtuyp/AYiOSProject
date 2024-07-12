@@ -151,9 +151,12 @@ NSString *const NetworkResponseParamData = @"data";
                     responseData = [class yy_modelWithDictionary:responseDic];
                 }
             } else {
-                NSLog(@"\n--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
-                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", nil);
-                return;
+                NSLog(@"--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
+//                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", responseData);
+//                !request.failure ?: request.failure(NetworkErrorFormat, nil, nil);
+//                return;
+                
+                responseData = nil;
             }
         }
         if (request.success) {
@@ -161,9 +164,13 @@ NSString *const NetworkResponseParamData = @"data";
         }
         return;
     }
-    if (statusCode == NetworkResponseStatusCodeOffline) {
+    if (statusCode == NetworkResponseStatusCodeOffline
+        || statusCode == NetworkResponseStatusCodeNoAccess) {
         !request.failure ?: request.failure(statusCode, message, data);
-        [self _handleOffline];
+        NSTimeInterval delay = [MBProgressHUD secondsToHideWithText:message];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self _handleOffline];
+        });
         return;
     }
     if (statusCode == NetworkResponseStatusCodeTokenExpired) {

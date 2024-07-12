@@ -1,14 +1,14 @@
 //
-//  MBProgressHUD+Tips.m
+//  MBProgressHUD+AppCategory.m
 //
 //  Created by MMM on 2021/7/6.
 //
 
-#import "MBProgressHUD+Tips.h"
+#import "MBProgressHUD+AppCategory.h"
 
-const NSInteger TipsAutomaticallyHideToastSeconds = -1;
+const NSInteger AppHUDAutomaticallyHideSeconds = -1;
 
-@implementation MBProgressHUD (Tips)
+@implementation MBProgressHUD (AppCategory)
 
 #pragma mark - Loading
 
@@ -38,8 +38,8 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
     hud.label.text = text;
     hud.detailsLabel.text = detailText;
     [hud showAnimated:YES];
-    if (delay == TipsAutomaticallyHideToastSeconds) {
-        CGFloat delay = [self smartDelaySecondsForTipsText:text];
+    if (delay == AppHUDAutomaticallyHideSeconds) {
+        CGFloat delay = [self secondsToHideWithText:text];
         [hud hideAnimated:YES afterDelay:delay];
     } else if (delay > 0) {
         [hud hideAnimated:YES afterDelay:delay];
@@ -50,11 +50,11 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
 #pragma mark - Text
 
 + (MBProgressHUD *)showWithText:(NSString *)text {
-    return [self showWithText:text detailText:nil inView:WINDOW hideAfterDelay:TipsAutomaticallyHideToastSeconds];
+    return [self showWithText:text detailText:nil inView:WINDOW hideAfterDelay:AppHUDAutomaticallyHideSeconds];
 }
 
 + (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView *)view {
-    return [self showWithText:text detailText:nil inView:view hideAfterDelay:TipsAutomaticallyHideToastSeconds];
+    return [self showWithText:text detailText:nil inView:view hideAfterDelay:AppHUDAutomaticallyHideSeconds];
 }
 
 + (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay {
@@ -62,11 +62,11 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
 }
 
 + (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText {
-    return [self showWithText:text detailText:detailText inView:WINDOW hideAfterDelay:TipsAutomaticallyHideToastSeconds];
+    return [self showWithText:text detailText:detailText inView:WINDOW hideAfterDelay:AppHUDAutomaticallyHideSeconds];
 }
 
 + (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText inView:(UIView *)view {
-    return [self showWithText:text detailText:detailText inView:view hideAfterDelay:TipsAutomaticallyHideToastSeconds];
+    return [self showWithText:text detailText:detailText inView:view hideAfterDelay:AppHUDAutomaticallyHideSeconds];
 }
 
 + (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay {
@@ -79,8 +79,8 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
     hud.label.text = text;
     hud.detailsLabel.text = detailText;
     [hud showAnimated:YES];
-    if (delay == TipsAutomaticallyHideToastSeconds) {
-        CGFloat delay = [self smartDelaySecondsForTipsText:text];
+    if (delay == AppHUDAutomaticallyHideSeconds) {
+        CGFloat delay = [self secondsToHideWithText:text];
         [hud hideAnimated:YES afterDelay:delay];
     } else if (delay > 0) {
         [hud hideAnimated:YES afterDelay:delay];
@@ -93,11 +93,11 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
 #pragma mark - 带图标的提示
 
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon {
-    return [self showWithText:text icon:icon inView:WINDOW hideAfterDelay:TipsAutomaticallyHideToastSeconds];
+    return [self showWithText:text icon:icon inView:WINDOW hideAfterDelay:AppHUDAutomaticallyHideSeconds];
 }
 
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon inView:(UIView *)view {
-    return [self showWithText:text icon:icon inView:view hideAfterDelay:TipsAutomaticallyHideToastSeconds];
+    return [self showWithText:text icon:icon inView:view hideAfterDelay:AppHUDAutomaticallyHideSeconds];
 }
 
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay {
@@ -106,8 +106,8 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
     hud.customView = [self createCustomViewWithImageName:icon
                                                labelText:text];
     [hud showAnimated:YES];
-    if (delay == TipsAutomaticallyHideToastSeconds) {
-        CGFloat delay = [self smartDelaySecondsForTipsText:text];
+    if (delay == AppHUDAutomaticallyHideSeconds) {
+        CGFloat delay = [self secondsToHideWithText:text];
         [hud hideAnimated:YES afterDelay:delay];
     } else if (delay > 0) {
         [hud hideAnimated:YES afterDelay:delay];
@@ -139,7 +139,7 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
     return hud;
 }
 
-+ (NSTimeInterval)smartDelaySecondsForTipsText:(NSString *)text {
++ (NSTimeInterval)secondsToHideWithText:(NSString *)text {
     NSUInteger length = 0;
     for (NSUInteger i = 0, l = text.length; i < l; i++) {
         unichar character = [text characterAtIndex:i];
@@ -149,14 +149,15 @@ const NSInteger TipsAutomaticallyHideToastSeconds = -1;
             length += 2;
         }
     }
-    if (length <= 20) {
-        return 1.5;
-    } else if (length <= 40) {
+    
+    if (length < 20) {
         return 2.0;
-    } else if (length <= 50) {
+    } else if (length < 40) {
         return 2.5;
-    } else {
+    } else if (length < 50) {
         return 3.0;
+    } else {
+        return 3.5;
     }
 }
 

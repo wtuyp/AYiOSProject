@@ -21,7 +21,7 @@
 		EBD3C20E2BC7D14B00A24298 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EBD3C20D2BC7D14B00A24298 /* PrivacyInfo.xcprivacy */; };
 		EBD3C54A2BC7D20400A24298 /* CALayer+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2102BC7D20300A24298 /* CALayer+AppCategory.m */; };
 		EBD3C54B2BC7D20400A24298 /* CBPeripheral+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2132BC7D20300A24298 /* CBPeripheral+AppCategory.m */; };
-		EBD3C54C2BC7D20400A24298 /* MBProgressHUD+Tips.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2162BC7D20300A24298 /* MBProgressHUD+Tips.m */; };
+		EBD3C54C2BC7D20400A24298 /* MBProgressHUD+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2162BC7D20300A24298 /* MBProgressHUD+AppCategory.m */; };
 		EBD3C54D2BC7D20400A24298 /* NSDate+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2192BC7D20300A24298 /* NSDate+AppCategory.m */; };
 		EBD3C54E2BC7D20400A24298 /* NSDictionary+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C21C2BC7D20300A24298 /* NSDictionary+AppCategory.m */; };
 		EBD3C54F2BC7D20400A24298 /* NSObject+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C21F2BC7D20300A24298 /* NSObject+AppCategory.m */; };
@@ -125,8 +125,8 @@
 		EBD3C2102BC7D20300A24298 /* CALayer+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+AppCategory.m"; sourceTree = "<group>"; };
 		EBD3C2122BC7D20300A24298 /* CBPeripheral+AppCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheral+AppCategory.h"; sourceTree = "<group>"; };
 		EBD3C2132BC7D20300A24298 /* CBPeripheral+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheral+AppCategory.m"; sourceTree = "<group>"; };
-		EBD3C2152BC7D20300A24298 /* MBProgressHUD+Tips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Tips.h"; sourceTree = "<group>"; };
-		EBD3C2162BC7D20300A24298 /* MBProgressHUD+Tips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Tips.m"; sourceTree = "<group>"; };
+		EBD3C2152BC7D20300A24298 /* MBProgressHUD+AppCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+AppCategory.h"; sourceTree = "<group>"; };
+		EBD3C2162BC7D20300A24298 /* MBProgressHUD+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+AppCategory.m"; sourceTree = "<group>"; };
 		EBD3C2182BC7D20300A24298 /* NSDate+AppCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+AppCategory.h"; sourceTree = "<group>"; };
 		EBD3C2192BC7D20300A24298 /* NSDate+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AppCategory.m"; sourceTree = "<group>"; };
 		EBD3C21B2BC7D20300A24298 /* NSDictionary+AppCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+AppCategory.h"; sourceTree = "<group>"; };
@@ -437,8 +437,8 @@
 		EBD3C2172BC7D20300A24298 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				EBD3C2152BC7D20300A24298 /* MBProgressHUD+Tips.h */,
-				EBD3C2162BC7D20300A24298 /* MBProgressHUD+Tips.m */,
+				EBD3C2152BC7D20300A24298 /* MBProgressHUD+AppCategory.h */,
+				EBD3C2162BC7D20300A24298 /* MBProgressHUD+AppCategory.m */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -1191,7 +1191,7 @@
 				EBD3C5612BC7D20400A24298 /* AppTabBar.m in Sources */,
 				EBD3C6292BC7D20400A24298 /* AccountInfoModel.m in Sources */,
 				EBD3C6CD2BC7D20400A24298 /* AYDataStateConfig.m in Sources */,
-				EBD3C54C2BC7D20400A24298 /* MBProgressHUD+Tips.m in Sources */,
+				EBD3C54C2BC7D20400A24298 /* MBProgressHUD+AppCategory.m in Sources */,
 				EBD3C6D22BC7D20400A24298 /* UIView+AYPopupController.m in Sources */,
 				EBD3C6DD2BC7D20400A24298 /* AppRefreshFooterView.m in Sources */,
 				EBD3C5502BC7D20400A24298 /* NSObject+YYModelAdd.m in Sources */,

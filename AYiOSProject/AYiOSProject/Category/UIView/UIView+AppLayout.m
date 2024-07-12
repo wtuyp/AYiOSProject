@@ -375,10 +375,15 @@
         MAS_VIEW *itemView = self.subviews[index];
         
         CGFloat itemWidth = itemWidthBlock(itemView, index);
-        if (itemLeft > leadSpacing && ((itemLeft + itemWidth) > (maxWidth - tailSpacing))) {
+        if (itemLeft == leadSpacing && (leadSpacing + itemWidth + tailSpacing > maxWidth)) {
+            itemWidth = maxWidth - leadSpacing - tailSpacing;
+        }
+        
+        if (itemLeft > leadSpacing && (itemLeft + itemWidth + tailSpacing > maxWidth)) {
             itemLeft = leadSpacing;
             itemTop += (itemHeight + lineSpacing);
         }
+        
         [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(itemLeft);
             make.top.mas_equalTo(itemTop);
