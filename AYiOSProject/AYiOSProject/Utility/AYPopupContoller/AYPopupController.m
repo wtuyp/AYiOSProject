@@ -50,7 +50,8 @@
 - (void)popup {
     AYPopupAnimationType animationType = self.contentView.animationType;
     self.backgroundColor = self.contentView.popupBackgroundDimColor ?: [[UIColor blackColor] colorWithAlphaComponent:0.5];
-
+    self.dimViewTapGesture.enabled = !self.contentView.disableTouchOutToDismiss;
+    
     __weak typeof(self) weakSelf = self;
     
     void (^animationBlock)(void) = nil;
@@ -394,6 +395,7 @@
 }
 
 #pragma mark - getter
+
 - (UIColor *)backgroundColor {
     return self.dimView.backgroundColor;
 }
@@ -530,7 +532,9 @@
                 self.contentView.right = self.panOriginOffset;
             }];
         } else if (self.contentView.animationType == AYPopupAnimationTypeSideFromRight) {
-            self.contentView.left = self.panOriginOffset;
+            [UIView animateWithDuration:0.25 animations:^{
+                self.contentView.left = self.panOriginOffset;
+            }];
         }
     }
 }
