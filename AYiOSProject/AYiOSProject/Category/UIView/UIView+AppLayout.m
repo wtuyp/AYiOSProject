@@ -374,14 +374,13 @@
     for (NSInteger index = 0; index < self.subviews.count; index++) {
         MAS_VIEW *itemView = self.subviews[index];
         
-        CGFloat itemWidth = itemWidthBlock(itemView, index);
-        if (itemLeft == leadSpacing && (leadSpacing + itemWidth + tailSpacing > maxWidth)) {
-            itemWidth = maxWidth - leadSpacing - tailSpacing;
-        }
-        
+        CGFloat itemWidth = itemWidthBlock(itemView, index);        
         if (itemLeft > leadSpacing && (itemLeft + itemWidth + tailSpacing > maxWidth)) {
             itemLeft = leadSpacing;
             itemTop += (itemHeight + lineSpacing);
+        }
+        if (itemLeft == leadSpacing && (leadSpacing + itemWidth + tailSpacing > maxWidth)) {
+            itemWidth = maxWidth - leadSpacing - tailSpacing;
         }
         
         [itemView mas_remakeConstraints:^(MASConstraintMaker *make) {
