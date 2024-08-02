@@ -193,16 +193,16 @@
 
 @implementation UIViewController (JNNaviView)
 
-+ (void)load {
-    Method originalMethod = class_getInstanceMethod(self, @selector(viewWillLayoutSubviews));
-    Method swizzledMethod = class_getInstanceMethod(self, @selector(app_viewWillLayoutSubviews));
-    method_exchangeImplementations(originalMethod, swizzledMethod);
-}
+//+ (void)load {
+//    Method originalMethod = class_getInstanceMethod(self, @selector(viewWillLayoutSubviews));
+//    Method swizzledMethod = class_getInstanceMethod(self, @selector(app_viewWillLayoutSubviews));
+//    method_exchangeImplementations(originalMethod, swizzledMethod);
+//}
 
-- (void)app_viewWillLayoutSubviews {
-    [self app_viewWillLayoutSubviews];
-    [self.view bringSubviewToFront:self.naviView];
-}
+//- (void)app_viewWillLayoutSubviews {
+//    [self app_viewWillLayoutSubviews];
+//    [self.view bringSubviewToFront:self.naviView];
+//}
 
 - (AppNaviView *)naviView {
     return objc_getAssociatedObject(self, _cmd);

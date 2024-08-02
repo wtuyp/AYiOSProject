@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, AYPopupAnimationType) {
     AYPopupAnimationTypeFade,
     AYPopupAnimationTypeSideFromBottom, ///< 从屏幕底部滑出，忽略 popupPoint / popupAlign 属性
     AYPopupAnimationTypeSideFromLeft,   ///< 从屏幕左边滑出，忽略 popupPoint / popupAlign 属性
-    AYPopupAnimationTypeSideFromRight,  ///< 从屏幕右边边滑出，忽略 popupPoint / popupAlign 属性
+    AYPopupAnimationTypeSideFromRight,  ///< 从屏幕右边滑出，忽略 popupPoint / popupAlign 属性
 };
 
 @interface UIView (AYPopupViewConfig)
