@@ -39,7 +39,7 @@ NSString *const NetworkResponseParamData = @"data";
 
 #pragma mark - public
 
-- (void)startRequest:(BaseRequest *)request {
+- (void)startRequest:(NetworkBaseRequest *)request {
 #if DEBUG
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
     if (request.userInfo) {
@@ -53,7 +53,7 @@ NSString *const NetworkResponseParamData = @"data";
     NSLog(@"\nRequest start: %@", request);
 }
 
-- (void)stopRequest:(BaseRequest *)request {
+- (void)stopRequest:(NetworkBaseRequest *)request {
     NSLog(@"\nRequest stop: %@", request);
     [request stop];
 }
@@ -71,7 +71,7 @@ NSString *const NetworkResponseParamData = @"data";
 #pragma mark - private
 
 /// 获取默认响应模型
-- (Class)_baseResponseClassOfBaseRequest:(BaseRequest *)req {
+- (Class)_baseResponseClassOfBaseRequest:(NetworkBaseRequest *)req {
     NSString *string = [NSStringFromClass(req.class) stringByReplacingOccurrencesOfString:@"Request" withString:@"Response"];
     return NSClassFromString(string);
 }
@@ -87,7 +87,7 @@ NSString *const NetworkResponseParamData = @"data";
 }
 
 /// 打印日志
-- (void)_logger:(BaseRequest *)req
+- (void)_logger:(NetworkBaseRequest *)req
            task:(NSURLSessionTask *)task
  responseObject:(id _Nullable)responseObject
           error:(NSError * _Nullable)error {
@@ -119,7 +119,7 @@ NSString *const NetworkResponseParamData = @"data";
 
 #pragma mark - YTKRequestDelegate
 
-- (void)requestFinished:(BaseRequest *)request {
+- (void)requestFinished:(NetworkBaseRequest *)request {
 #if DEBUG
     [self _logger:request task:request.requestTask responseObject:request.responseObject error:nil];
 #endif
@@ -192,7 +192,7 @@ NSString *const NetworkResponseParamData = @"data";
     !request.failure ?: request.failure(statusCode, message, data);
 }
 
-- (void)requestFailed:(BaseRequest *)request {
+- (void)requestFailed:(NetworkBaseRequest *)request {
 #if DEBUG
     [self _logger:request task:request.requestTask responseObject:nil error:request.error];
 #endif

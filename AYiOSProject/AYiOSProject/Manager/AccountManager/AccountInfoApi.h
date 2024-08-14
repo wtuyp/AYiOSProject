@@ -5,13 +5,13 @@
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 #import "AccountInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 获取账户信息 请求
-@interface AccountInfoApiRequest : BaseRequest
+@interface AccountInfoApiRequest : NetworkBaseRequest
 
 @end
 

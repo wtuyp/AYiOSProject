@@ -1,17 +1,17 @@
 //   
-//  BasePageResponse.m
+//  NetworkBasePageResponse.m
 //   
 //  Created by alpha yu on 2024/1/11 
 //   
    
 
-#import "BasePageResponse.h"
+#import "NetworkBasePageResponse.h"
 
-@interface BasePageResponse ()
+@interface NetworkBasePageResponse ()
 
 @end
 
-@implementation BasePageResponse
+@implementation NetworkBasePageResponse
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{

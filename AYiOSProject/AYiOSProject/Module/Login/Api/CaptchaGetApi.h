@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 验证码获取
-@interface CaptchaGetApiRequest : BaseRequest
+@interface CaptchaGetApiRequest : NetworkBaseRequest
 
 @property (nonatomic, copy) NSString *phoneNumber;
 

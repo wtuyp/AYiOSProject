@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 登出 请求
-@interface LogoutApiRequest : BaseRequest
+@interface LogoutApiRequest : NetworkBaseRequest
 
 @end
 

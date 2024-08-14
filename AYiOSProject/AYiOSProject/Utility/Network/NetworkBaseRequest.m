@@ -1,17 +1,17 @@
 //
-//  BaseRequest.m
+//  NetworkBaseRequest.m
 //
 //  Created by MMM on 2021/9/15.
 //
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 #import <AFNetworking/AFNetworking.h>
 #import "NetworkManager.h"
 #import "NetworkUrl.h"
 
 #import "AccountManager.h"
 
-@implementation BaseRequest
+@implementation NetworkBaseRequest
 
 #pragma mark - override
 
@@ -72,7 +72,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         propertyNames = [[NSMutableArray alloc] init];
-        Class cls = [BaseRequest class];
+        Class cls = [NetworkBaseRequest class];
         while (cls != nil) {
             unsigned int propertyCount = 0;
             objc_property_t *propertys = class_copyPropertyList(cls, &propertyCount);
@@ -114,8 +114,8 @@
     [[NetworkManager shared] stopRequest:self];
 }
 
-- (__kindof BaseRequest *)retryRequest {
-    BaseRequest *request = [self yy_modelCopy];
+- (__kindof NetworkBaseRequest *)retryRequest {
+    NetworkBaseRequest *request = [self yy_modelCopy];
     request.success = self.success;
     request.failure = self.failure;
     [request startRequest];

@@ -1,5 +1,5 @@
 //
-//  BaseRequest.h
+//  NetworkBaseRequest.h
 //
 //  Created by MMM on 2021/9/15.
 //
@@ -15,7 +15,7 @@ typedef void (^FailureHandler)(NSInteger statusCode, NSString * _Nullable messag
  请求基类，子类继承发起请求。
  子类命名规范 xxxRequest；默认响应数据模型为 xxxResponse，由开发者生成。
  */
-@interface BaseRequest : YTKRequest
+@interface NetworkBaseRequest : YTKRequest
 
 @property (nonatomic, copy, nullable) SuccessHandler success;
 @property (nonatomic, copy, nullable) FailureHandler failure;
@@ -31,7 +31,7 @@ typedef void (^FailureHandler)(NSInteger statusCode, NSString * _Nullable messag
 - (void)stopRequest;
 
 /// 重试请求，返回一个新的请求实例
-- (__kindof BaseRequest *)retryRequest;
+- (__kindof NetworkBaseRequest *)retryRequest;
 
 /// 上传文件时配置，使用 NSData
 - (void)setUploadConfigWithKey:(NSString *)key

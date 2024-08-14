@@ -5,13 +5,13 @@
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 #import "AccountInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// App登录
-@interface LoginApiRequest : BaseRequest
+@interface LoginApiRequest : NetworkBaseRequest
 
 @property (nonatomic, copy) NSString *account;      ///< 账号
 @property (nonatomic, copy) NSString *authCode;     ///< 验证码

@@ -1,16 +1,16 @@
 //   
-//  BasePageRequest.h
+//  NetworkBasePageRequest.h
 //   
 //  Created by alpha yu on 2024/1/23 
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 分页的网络请求基类
-@interface BasePageRequest : BaseRequest
+@interface NetworkBasePageRequest : NetworkBaseRequest
 
 @property (nonatomic, assign) NSInteger pageSize;   ///< 每页数量
 @property (nonatomic, assign) NSInteger pageNum;    ///< 当前页码

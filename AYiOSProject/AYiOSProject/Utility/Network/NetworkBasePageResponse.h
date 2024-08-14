@@ -1,5 +1,5 @@
 //   
-//  BasePageResponse.h
+//  NetworkBasePageResponse.h
 //   
 //  Created by alpha yu on 2024/1/11 
 //   
@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 分页的网络响应基类
-@interface BasePageResponse : NSObject
+@interface NetworkBasePageResponse : NSObject
 
 @property (nonatomic, copy) NSArray *list;  ///< 列表
 @property (nonatomic, assign) BOOL hasMore; ///< 是否有更多

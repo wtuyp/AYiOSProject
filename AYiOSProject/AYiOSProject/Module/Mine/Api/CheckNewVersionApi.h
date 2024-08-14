@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 查检新版本 请求
-@interface CheckNewVersionApiRequest : BaseRequest
+@interface CheckNewVersionApiRequest : NetworkBaseRequest
 
 @end
 

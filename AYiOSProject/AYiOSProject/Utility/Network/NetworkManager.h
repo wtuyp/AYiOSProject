@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 
 extern NSString * _Nonnull const NetworkResponseParamStatusCode;
 extern NSString * _Nonnull const NetworkResponseParamMessage;
@@ -49,9 +49,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 /// 开始请求
-- (void)startRequest:(BaseRequest *)request;
+- (void)startRequest:(NetworkBaseRequest *)request;
 /// 结束请求
-- (void)stopRequest:(BaseRequest *)request;
+- (void)stopRequest:(NetworkBaseRequest *)request;
 
 @end
 

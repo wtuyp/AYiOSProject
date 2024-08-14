@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseRequest.h"
+#import "NetworkBaseRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 验证码验证 请求
-@interface CaptchaValidateApiRequest : BaseRequest
+@interface CaptchaValidateApiRequest : NetworkBaseRequest
 
 @end
 

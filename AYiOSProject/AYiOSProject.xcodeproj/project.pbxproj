@@ -83,9 +83,9 @@
 		EBD3C6D02BC7D20400A24298 /* AYLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5142BC7D20400A24298 /* AYLabelView.m */; };
 		EBD3C6D12BC7D20400A24298 /* AYPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5172BC7D20400A24298 /* AYPopupController.m */; };
 		EBD3C6D22BC7D20400A24298 /* UIView+AYPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5192BC7D20400A24298 /* UIView+AYPopupController.m */; };
-		EBD3C6D82BC7D20400A24298 /* BasePageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C52C2BC7D20400A24298 /* BasePageRequest.m */; };
-		EBD3C6D92BC7D20400A24298 /* BasePageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C52E2BC7D20400A24298 /* BasePageResponse.m */; };
-		EBD3C6DA2BC7D20400A24298 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5302BC7D20400A24298 /* BaseRequest.m */; };
+		EBD3C6D82BC7D20400A24298 /* NetworkBasePageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C52C2BC7D20400A24298 /* NetworkBasePageRequest.m */; };
+		EBD3C6D92BC7D20400A24298 /* NetworkBasePageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C52E2BC7D20400A24298 /* NetworkBasePageResponse.m */; };
+		EBD3C6DA2BC7D20400A24298 /* NetworkBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5302BC7D20400A24298 /* NetworkBaseRequest.m */; };
 		EBD3C6DB2BC7D20400A24298 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5322BC7D20400A24298 /* NetworkManager.m */; };
 		EBD3C6DC2BC7D20400A24298 /* NoticeBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5362BC7D20400A24298 /* NoticeBarView.m */; };
 		EBD3C6DD2BC7D20400A24298 /* AppRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5392BC7D20400A24298 /* AppRefreshFooterView.m */; };
@@ -256,12 +256,12 @@
 		EBD3C5182BC7D20400A24298 /* UIView+AYPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AYPopupController.h"; sourceTree = "<group>"; };
 		EBD3C5192BC7D20400A24298 /* UIView+AYPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AYPopupController.m"; sourceTree = "<group>"; };
 		EBD3C5232BC7D20400A24298 /* MMMLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMLab.h; sourceTree = "<group>"; };
-		EBD3C52B2BC7D20400A24298 /* BasePageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePageRequest.h; sourceTree = "<group>"; };
-		EBD3C52C2BC7D20400A24298 /* BasePageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePageRequest.m; sourceTree = "<group>"; };
-		EBD3C52D2BC7D20400A24298 /* BasePageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePageResponse.h; sourceTree = "<group>"; };
-		EBD3C52E2BC7D20400A24298 /* BasePageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePageResponse.m; sourceTree = "<group>"; };
-		EBD3C52F2BC7D20400A24298 /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
-		EBD3C5302BC7D20400A24298 /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		EBD3C52B2BC7D20400A24298 /* NetworkBasePageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBasePageRequest.h; sourceTree = "<group>"; };
+		EBD3C52C2BC7D20400A24298 /* NetworkBasePageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBasePageRequest.m; sourceTree = "<group>"; };
+		EBD3C52D2BC7D20400A24298 /* NetworkBasePageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBasePageResponse.h; sourceTree = "<group>"; };
+		EBD3C52E2BC7D20400A24298 /* NetworkBasePageResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBasePageResponse.m; sourceTree = "<group>"; };
+		EBD3C52F2BC7D20400A24298 /* NetworkBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBaseRequest.h; sourceTree = "<group>"; };
+		EBD3C5302BC7D20400A24298 /* NetworkBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBaseRequest.m; sourceTree = "<group>"; };
 		EBD3C5312BC7D20400A24298 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		EBD3C5322BC7D20400A24298 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		EBD3C5332BC7D20400A24298 /* NetworkUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUrl.h; sourceTree = "<group>"; };
@@ -983,12 +983,12 @@
 		EBD3C5342BC7D20400A24298 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EBD3C52B2BC7D20400A24298 /* BasePageRequest.h */,
-				EBD3C52C2BC7D20400A24298 /* BasePageRequest.m */,
-				EBD3C52D2BC7D20400A24298 /* BasePageResponse.h */,
-				EBD3C52E2BC7D20400A24298 /* BasePageResponse.m */,
-				EBD3C52F2BC7D20400A24298 /* BaseRequest.h */,
-				EBD3C5302BC7D20400A24298 /* BaseRequest.m */,
+				EBD3C52B2BC7D20400A24298 /* NetworkBasePageRequest.h */,
+				EBD3C52C2BC7D20400A24298 /* NetworkBasePageRequest.m */,
+				EBD3C52D2BC7D20400A24298 /* NetworkBasePageResponse.h */,
+				EBD3C52E2BC7D20400A24298 /* NetworkBasePageResponse.m */,
+				EBD3C52F2BC7D20400A24298 /* NetworkBaseRequest.h */,
+				EBD3C5302BC7D20400A24298 /* NetworkBaseRequest.m */,
 				EBD3C5312BC7D20400A24298 /* NetworkManager.h */,
 				EBD3C5322BC7D20400A24298 /* NetworkManager.m */,
 				EBD3C5332BC7D20400A24298 /* NetworkUrl.h */,
@@ -1186,7 +1186,7 @@
 				EBD3C5B92BC7D20400A24298 /* CaptchaGetApi.m in Sources */,
 				EBD3C6DE2BC7D20400A24298 /* AppRefreshHeader.m in Sources */,
 				EBD3C6E32BC7D20400A24298 /* UIUtils.m in Sources */,
-				EBD3C6D82BC7D20400A24298 /* BasePageRequest.m in Sources */,
+				EBD3C6D82BC7D20400A24298 /* NetworkBasePageRequest.m in Sources */,
 				EBD3C6CF2BC7D20400A24298 /* UIView+AYDataState.m in Sources */,
 				EBD3C5612BC7D20400A24298 /* AppTabBar.m in Sources */,
 				EBD3C6292BC7D20400A24298 /* AccountInfoModel.m in Sources */,
@@ -1234,7 +1234,7 @@
 				EB9F55C32BCCB78900333706 /* BadgeView.m in Sources */,
 				EBD3C55D2BC7D20400A24298 /* UIView+AppLayout.m in Sources */,
 				EBD3C55B2BC7D20400A24298 /* UITextField+ZGExtand.m in Sources */,
-				EBD3C6DA2BC7D20400A24298 /* BaseRequest.m in Sources */,
+				EBD3C6DA2BC7D20400A24298 /* NetworkBaseRequest.m in Sources */,
 				EBD3C54B2BC7D20400A24298 /* CBPeripheral+AppCategory.m in Sources */,
 				EBD3C6C02BC7D20400A24298 /* JXCategoryTitleBackgroundCellModel.m in Sources */,
 				EBD3C5572BC7D20400A24298 /* UINavigationController+AppCategory.m in Sources */,
@@ -1242,7 +1242,7 @@
 				EB92093D2BFDE47200D48B32 /* TableIndexDemoController.m in Sources */,
 				EBD3C5602BC7D20400A24298 /* UIViewController+BaseNavi.m in Sources */,
 				EBD3C5BC2BC7D20400A24298 /* CaptchaValidateController.m in Sources */,
-				EBD3C6D92BC7D20400A24298 /* BasePageResponse.m in Sources */,
+				EBD3C6D92BC7D20400A24298 /* NetworkBasePageResponse.m in Sources */,
 				EBD3C5632BC7D20400A24298 /* AppTabBarItemView.m in Sources */,
 				EBD3C61D2BC7D20400A24298 /* PersonModel.m in Sources */,
 				EBD3C5562BC7D20400A24298 /* UILabel+AttributedString.m in Sources */,

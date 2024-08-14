@@ -1,13 +1,13 @@
 //   
-//  BasePageRequest.m
+//  NetworkBasePageRequest.m
 //   
 //  Created by alpha yu on 2024/1/23 
 //   
    
 
-#import "BasePageRequest.h"
+#import "NetworkBasePageRequest.h"
 
-@implementation BasePageRequest
+@implementation NetworkBasePageRequest
 
 - (instancetype)init {
     self = [super init];
