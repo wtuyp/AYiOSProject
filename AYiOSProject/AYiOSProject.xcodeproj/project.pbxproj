@@ -331,6 +331,14 @@
 			path = Badge;
 			sourceTree = "<group>";
 		};
+		EBBE36AA2C6DEE670086CFF6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EBD3C1CC2BC7B66000A24298 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		EBC80D522BDB3D5000F7913C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,13 +396,14 @@
 			isa = PBXGroup;
 			children = (
 				EBD3C40A2BC7D20300A24298 /* Module */,
-				EBD3C25B2BC7D20300A24298 /* Base */,
 				EBD3C42E2BC7D20300A24298 /* Model */,
 				EBD3C2482BC7D20300A24298 /* Category */,
-				EBD3C4472BC7D20300A24298 /* Macro */,
 				EBD3C4402BC7D20300A24298 /* Manager */,
+				EBD3C4472BC7D20300A24298 /* Macro */,
 				EBD3C5492BC7D20400A24298 /* Utility */,
 				EBD3C4F42BC7D20400A24298 /* Vendor */,
+				EBD3C25B2BC7D20300A24298 /* Base */,
+				EBBE36AA2C6DEE670086CFF6 /* Resource */,
 				EBD3C1D92BC7BD3C00A24298 /* Main */,
 			);
 			path = AYiOSProject;
@@ -407,7 +416,6 @@
 				EBD3C20D2BC7D14B00A24298 /* PrivacyInfo.xcprivacy */,
 				EBD3C1C02BC7B65E00A24298 /* AppDelegate.h */,
 				EBD3C1C12BC7B65E00A24298 /* AppDelegate.m */,
-				EBD3C1CC2BC7B66000A24298 /* Assets.xcassets */,
 				EBD3C1CE2BC7B66000A24298 /* LaunchScreen.storyboard */,
 				EBD3C1D12BC7B66000A24298 /* Info.plist */,
 				EBD3C1D22BC7B66000A24298 /* main.m */,

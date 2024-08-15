@@ -18,11 +18,12 @@
 
 ### 目录结构
 * Module: app业务模块，如首页、登录页、我的页等等
-* Base: 基类
 * Model: 模型
 * Category: 分类
-* Macro: 宏定义
 * Manager: 管理类
+* Macro: 宏定义
 * Utility: 自有工具
 * Vendor: 第三方库
+* Base: 基类
+* Resource: 资源文件夹，存放 xcassets、字体、音视频等
 * Main: 项目入口和配置的一些文件，比如 main.m / pch文件/ AppDelegate / Info.plist / xcassets 等

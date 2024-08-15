@@ -164,7 +164,7 @@
 - (UIView *)createInfoView {
     UIView *view = [[UIView alloc] init];
     
-    UIImageView *arrowView = [[UIImageView alloc] initWithImage:[IMAGE(@"icon_arrow_right_gray_8_10") imageByTintColor:UIColor.whiteColor]];
+    UIImageView *arrowView = [[UIImageView alloc] initWithImage:[IMAGE(@"icon_arrow_right_gray_7_11") imageByTintColor:UIColor.whiteColor]];
     UILabel *infolabel = [UILabel labelWithColor:COLOR_HEX(#FFFFFF) font:FONT(9) text:@"个人信息"];
     UIButton *infoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [infoBtn addTarget:self action:@selector(showAccountInfo) forControlEvents:UIControlEventTouchUpInside];
@@ -197,7 +197,7 @@
     [arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(infolabel);
         make.left.equalTo(infolabel.mas_right).offset(SCALE(35));
-        make.size.mas_equalTo(CGSizeMake(SCALE(8), SCALE(10)));
+        make.size.mas_equalTo(CGSizeMake(SCALE(7), SCALE(11)));
         make.right.mas_equalTo(0);
     }];
     [infoBtn mas_makeConstraints:^(MASConstraintMaker *make) {
