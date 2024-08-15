@@ -10,9 +10,8 @@
 #import "AccountInfoApi.h"
 #import "LogoutApi.h"
 
-static NSString *const TokenKey = APP_KEY_PREFIX@"account.token";
-static NSString *const RefreshTokenKey = APP_KEY_PREFIX@"account.token.refresh";
-static NSString *const InfoKey = APP_KEY_PREFIX@"account.info";
+static NSString *const AccountAccessTokenKey = APP_KEY_PREFIX@"account.access.token";
+static NSString *const AccountInfoKey = APP_KEY_PREFIX@"account.info";
 
 @interface AccountManager ()
 
@@ -40,43 +39,32 @@ static NSString *const InfoKey = APP_KEY_PREFIX@"account.info";
 }
 
 - (void)loadData {
-    self.accessToken = [[MMKV defaultMMKV] getStringForKey:TokenKey];
-    self.refreshToken = [[MMKV defaultMMKV] getStringForKey:RefreshTokenKey];
+    self.accessToken = [[MMKV defaultMMKV] getStringForKey:AccountAccessTokenKey];
     
-    NSString *infoJSONString = [[MMKV defaultMMKV] getStringForKey:InfoKey];
+    NSString *infoJSONString = [[MMKV defaultMMKV] getStringForKey:AccountInfoKey];
     _account = [AccountInfoModel yy_modelWithJSON:infoJSONString];
 }
 
 - (void)setAccessToken:(NSString *)accessToken {
     _accessToken = accessToken;
     if (accessToken) {
-        [[MMKV defaultMMKV] setString:accessToken forKey:TokenKey];
+        [[MMKV defaultMMKV] setString:accessToken forKey:AccountAccessTokenKey];
     } else {
-        [[MMKV defaultMMKV] removeValueForKey:TokenKey];
-    }
-}
-
-- (void)setRefreshToken:(NSString *)refreshToken {
-    _refreshToken = refreshToken;
-    if (refreshToken) {
-        [[MMKV defaultMMKV] setString:refreshToken forKey:RefreshTokenKey];
-    } else {
-        [[MMKV defaultMMKV] removeValueForKey:RefreshTokenKey];
+        [[MMKV defaultMMKV] removeValueForKey:AccountAccessTokenKey];
     }
 }
 
 - (void)updateAccount:(AccountInfoModel * _Nullable)account {
     _account = account;
     if (account) {
-        [[MMKV defaultMMKV] setString:[account yy_modelToJSONString] forKey:InfoKey];
+        [[MMKV defaultMMKV] setString:[account yy_modelToJSONString] forKey:AccountInfoKey];
     } else {
-        [[MMKV defaultMMKV] removeValueForKey:InfoKey];
+        [[MMKV defaultMMKV] removeValueForKey:AccountInfoKey];
     }
 }
 
 - (void)logout {
     self.accessToken = nil;
-    self.refreshToken = nil;
     [self updateAccount:nil];
 }
 
