@@ -6,12 +6,12 @@
    
 
 #import "CBPeripheral+AppCategory.h"
-#import "MMMLab.h"
+#import "MacroObjc.h"
 
 @implementation CBPeripheral (AppCategory)
 
-MMMSynthesizeIdStrongProperty(writeCharacteristic, setWriteCharacteristic)
-MMMSynthesizeIdStrongProperty(advertisementData, setAdvertisementData)
+AppSynthesizeIdStrongProperty(writeCharacteristic, setWriteCharacteristic)
+AppSynthesizeIdStrongProperty(advertisementData, setAdvertisementData)
 
 - (NSString *)stateString {
     if (self.state == CBPeripheralStateConnected) {

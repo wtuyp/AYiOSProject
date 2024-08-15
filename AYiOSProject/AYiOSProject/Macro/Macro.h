@@ -7,10 +7,11 @@
 #ifndef Macro_h
 #define Macro_h
 
-#import "MacroUtils.h"
 #import "MacroConfig.h"
 #import "MacroDevice.h"
-#import "MacroOpen.h"
 #import "MacroNotify.h"
+#import "MacroObjc.h"
+#import "MacroOpen.h"
+#import "MacroUtils.h"
 
 #endif /* Macro_h */

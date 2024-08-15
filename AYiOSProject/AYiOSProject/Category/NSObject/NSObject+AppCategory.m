@@ -6,11 +6,11 @@
    
 
 #import "NSObject+AppCategory.h"
-#import "MMMLab.h"
+#import "MacroObjc.h"
 
 @implementation NSObject (AppCategory)
 
-MMMSynthesizeIdStrongProperty(app_data, setApp_data)
-MMMSynthesizeBOOLProperty(app_selected, setApp_selected)
+AppSynthesizeIdStrongProperty(app_data, setApp_data)
+AppSynthesizeBOOLProperty(app_selected, setApp_selected)
 
 @end

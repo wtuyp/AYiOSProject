@@ -255,7 +255,7 @@
 		EBD3C5172BC7D20400A24298 /* AYPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYPopupController.m; sourceTree = "<group>"; };
 		EBD3C5182BC7D20400A24298 /* UIView+AYPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AYPopupController.h"; sourceTree = "<group>"; };
 		EBD3C5192BC7D20400A24298 /* UIView+AYPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AYPopupController.m"; sourceTree = "<group>"; };
-		EBD3C5232BC7D20400A24298 /* MMMLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMLab.h; sourceTree = "<group>"; };
+		EBD3C5232BC7D20400A24298 /* MacroObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroObjc.h; sourceTree = "<group>"; };
 		EBD3C52B2BC7D20400A24298 /* NetworkBasePageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBasePageRequest.h; sourceTree = "<group>"; };
 		EBD3C52C2BC7D20400A24298 /* NetworkBasePageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBasePageRequest.m; sourceTree = "<group>"; };
 		EBD3C52D2BC7D20400A24298 /* NetworkBasePageResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBasePageResponse.h; sourceTree = "<group>"; };
@@ -841,6 +841,7 @@
 				EBD3C4422BC7D20300A24298 /* MacroConfig.h */,
 				EBD3C4432BC7D20300A24298 /* MacroDevice.h */,
 				EBD3C4442BC7D20300A24298 /* MacroNotify.h */,
+				EBD3C5232BC7D20400A24298 /* MacroObjc.h */,
 				EBD3C4452BC7D20300A24298 /* MacroOpen.h */,
 				EBD3C4462BC7D20300A24298 /* MacroUtils.h */,
 			);
@@ -972,14 +973,6 @@
 			path = AYPopupContoller;
 			sourceTree = "<group>";
 		};
-		EBD3C5242BC7D20400A24298 /* MMMLab */ = {
-			isa = PBXGroup;
-			children = (
-				EBD3C5232BC7D20400A24298 /* MMMLab.h */,
-			);
-			path = MMMLab;
-			sourceTree = "<group>";
-		};
 		EBD3C5342BC7D20400A24298 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1048,7 +1041,6 @@
 				EBD3C51A2BC7D20400A24298 /* AYPopupContoller */,
 				EB9F55C02BCCB78900333706 /* Badge */,
 				EB9F55BD2BCCB78800333706 /* Gradient */,
-				EBD3C5242BC7D20400A24298 /* MMMLab */,
 				EBD3C5342BC7D20400A24298 /* Network */,
 				EBD3C5372BC7D20400A24298 /* NoticeBarView */,
 				EBD3C5402BC7D20400A24298 /* Refresh */,

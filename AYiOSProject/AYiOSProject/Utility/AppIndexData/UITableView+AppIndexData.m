@@ -6,7 +6,7 @@
    
 
 #import "UITableView+AppIndexData.h"
-#import "MMMLab.h"
+#import "MacroObjc.h"
 
 @interface UITableView ()
 
@@ -17,7 +17,7 @@
 
 @implementation UITableView (AppIndexData)
 
-MMMSynthesizeIdCopyProperty(indexArray, setIndexArray)
+AppSynthesizeIdCopyProperty(indexArray, setIndexArray)
 
 #pragma mark - getter
 

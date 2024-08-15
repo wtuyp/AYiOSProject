@@ -5,7 +5,7 @@
 //
 
 #import "AYPopupController.h"
-#import "MMMLab.h"
+#import "MacroObjc.h"
 #import "UIUtils.h"
 
 @interface AYPopupController ()
@@ -553,18 +553,18 @@
 
 @implementation UIView (AYPopupViewConfig)
 
-MMMSynthesizeIntProperty(animationType, setAnimationType)
-MMMSynthesizeCGPointProperty(popupPoint, setPopupPoint)
-MMMSynthesizeIntProperty(popupAlign, setPopupAlign)
-MMMSynthesizeCGFloatProperty(popupFixedWidth, setPopupFixedWidth)
-MMMSynthesizeCGFloatProperty(popupFixedHeight, setPopupFixedHeight)
-MMMSynthesizeIdCopyProperty(popupCompletedBlock, setPopupCompletedBlock)
-MMMSynthesizeIdCopyProperty(dismissCompletedBlock, setDismissCompletedBlock)
-MMMSynthesizeIdStrongProperty(popupBackgroundDimColor, setPopupBackgroundDimColor)
-MMMSynthesizeBOOLProperty(disableTouchOutToDismiss, setDisableTouchOutToDismiss)
-MMMSynthesizeIdWeakProperty(targetController, setTargetController)
-MMMSynthesizeIdWeakProperty(myController, setMyController)
-MMMSynthesizeBOOLProperty(panGestureEnable, setPanGestureEnable)
+AppSynthesizeIntProperty(animationType, setAnimationType)
+AppSynthesizeCGPointProperty(popupPoint, setPopupPoint)
+AppSynthesizeIntProperty(popupAlign, setPopupAlign)
+AppSynthesizeCGFloatProperty(popupFixedWidth, setPopupFixedWidth)
+AppSynthesizeCGFloatProperty(popupFixedHeight, setPopupFixedHeight)
+AppSynthesizeIdCopyProperty(popupCompletedBlock, setPopupCompletedBlock)
+AppSynthesizeIdCopyProperty(dismissCompletedBlock, setDismissCompletedBlock)
+AppSynthesizeIdStrongProperty(popupBackgroundDimColor, setPopupBackgroundDimColor)
+AppSynthesizeBOOLProperty(disableTouchOutToDismiss, setDisableTouchOutToDismiss)
+AppSynthesizeIdWeakProperty(targetController, setTargetController)
+AppSynthesizeIdWeakProperty(myController, setMyController)
+AppSynthesizeBOOLProperty(panGestureEnable, setPanGestureEnable)
 
 - (void)setPopupPointFromView:(UIView *)view referenceAlign:(AYPopupAlign)align {
     [self setPopupPointFromView:view referenceAlign:align offset:CGPointZero];

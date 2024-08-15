@@ -5,12 +5,12 @@
 //
 
 #import "UIView+AppCategory.h"
-#import "MMMLab.h"
+#import "MacroObjc.h"
 
 @implementation UIViewController (BaseNavi)
 
-MMMSynthesizeBOOLProperty(backBarButtonHidden, setBackBarButtonHidden)
-MMMSynthesizeBOOLProperty(interactivePopDisabled, setInteractivePopDisabled)
+AppSynthesizeBOOLProperty(backBarButtonHidden, setBackBarButtonHidden)
+AppSynthesizeBOOLProperty(interactivePopDisabled, setInteractivePopDisabled)
 
 - (BOOL)backBarButtonAction {
     return YES;

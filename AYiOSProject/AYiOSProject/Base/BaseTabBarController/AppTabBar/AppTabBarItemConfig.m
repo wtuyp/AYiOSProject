@@ -6,7 +6,7 @@
    
 
 #import "AppTabBarItemConfig.h"
-#import "MMMLab.h"
+#import "MacroObjc.h"
 
 @interface AppTabBarItemConfig ()
 
@@ -33,6 +33,6 @@
 
 @implementation UIViewController (AppTabBarItemConfig)
 
-MMMSynthesizeIdStrongProperty(app_tabBarItemConfig, setApp_tabBarItemConfig)
+AppSynthesizeIdStrongProperty(app_tabBarItemConfig, setApp_tabBarItemConfig)
 
 @end
