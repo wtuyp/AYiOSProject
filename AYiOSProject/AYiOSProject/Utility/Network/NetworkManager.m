@@ -177,7 +177,6 @@ NSString *const NetworkResponseParamData = @"data";
         !request.failure ?: request.failure(statusCode, nil, data);
 
         AccountManager.shared.accessToken = data[@"accessToken"];
-        AccountManager.shared.refreshToken = data[@"refreshToken"];
         
         // 重新发起请求
         [request retryRequest];

@@ -41,9 +41,8 @@
     NSMutableDictionary<NSString *, NSString *> *headerDic = [[NSMutableDictionary alloc] init];
     headerDic[@"App-Version"] = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     headerDic[@"Device-Platform"] = @"iOS";
-    if (AccountManager.shared.accessToken && AccountManager.shared.refreshToken) {
+    if (AccountManager.shared.accessToken) {
         headerDic[@"Access-Token"] = AccountManager.shared.accessToken;
-        headerDic[@"Refresh-Token"] = AccountManager.shared.refreshToken;
     }
 
     return headerDic;

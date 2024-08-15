@@ -205,14 +205,10 @@
         _boxInputView.boxFlowLayout.minLineSpacing = self.boxInputViewItemGap;
         _boxInputView.customCellProperty = property;
 
-        WEAK_SELF
         _boxInputView.textDidChangeblock = ^(NSString * _Nullable text, BOOL isFinished) {
-            STRONG_SELF
             if (isFinished) {
                 AccountManager.shared.accessToken = @"accessToken";
                 [AppManager.shared accountLogin];
-                
-//                [self requestLogin];
             }
         };
     }
@@ -278,7 +274,6 @@
         LoginApiResponse *response = (LoginApiResponse *)data;
 
         AccountManager.shared.accessToken = response.accessToken;
-        AccountManager.shared.refreshToken = response.refreshToken;
         [AccountManager.shared updateAccount:response.accountInfo];
         [AppManager.shared accountLogin];
     } failure:^(NSInteger statusCode, NSString * _Nullable message, id  _Nullable data) {

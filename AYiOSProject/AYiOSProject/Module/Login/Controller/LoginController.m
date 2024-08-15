@@ -481,7 +481,6 @@
         LoginApiResponse *response = (LoginApiResponse *)data;
 
         AccountManager.shared.accessToken = response.accessToken;
-        AccountManager.shared.refreshToken = response.refreshToken;
         [AccountManager.shared updateAccount:response.accountInfo];
         [AppManager.shared accountLogin];
     } failure:^(NSInteger statusCode, NSString * _Nullable message, id  _Nullable data) {

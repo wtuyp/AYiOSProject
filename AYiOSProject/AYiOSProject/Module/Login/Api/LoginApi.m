@@ -22,9 +22,5 @@
 
 @implementation LoginApiResponse
 
- + (NSDictionary *)modelCustomPropertyMapper {
-     return @{@"accessToken" : @"token.accessToken",
-              @"refreshToken" : @"token.refreshToken"};
- }
 
 @end
