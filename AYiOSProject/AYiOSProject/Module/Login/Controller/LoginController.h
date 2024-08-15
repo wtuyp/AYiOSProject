@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 登录页
-@interface LoginController : BaseController
+@interface LoginController : AppBaseController
 
 @end
 

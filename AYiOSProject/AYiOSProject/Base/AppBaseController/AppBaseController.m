@@ -1,17 +1,17 @@
 //
-//  BaseController.m
+//  AppBaseController.m
 //
 //  Created by MMM on 2021/11/26.
 //
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
-@interface BaseController ()
+@interface AppBaseController ()
 
 @end
 
 
-@implementation BaseController
+@implementation AppBaseController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];

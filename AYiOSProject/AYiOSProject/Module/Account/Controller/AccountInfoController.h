@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 我的-个人信息
-@interface AccountInfoController : BaseController
+@interface AccountInfoController : AppBaseController
 
 @end
 

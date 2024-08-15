@@ -5,7 +5,7 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
  AppTableIndexView 组件的使用
  */
 
-@interface TableIndexDemoController : BaseController
+@interface TableIndexDemoController : AppBaseController
 
 @end
 

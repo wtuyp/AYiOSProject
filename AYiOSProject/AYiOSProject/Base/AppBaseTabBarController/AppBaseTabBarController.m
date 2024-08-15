@@ -1,22 +1,22 @@
 //   
-//  BaseTabBarController.m
+//  AppBaseTabBarController.m
 //   
 //  Created by alpha yu on 2024/3/19 
 //   
    
 
-#import "BaseTabBarController.h"
+#import "AppBaseTabBarController.h"
 #import "AppTabBar.h"
 #import "AppTabBarItemConfig.h"
 
-@interface BaseTabBarController ()
+@interface AppBaseTabBarController ()
 
 @property (nonatomic, strong) AppTabBar *customTabBar;
 @property (nonatomic, strong) UIVisualEffectView *effectView;
 
 @end
 
-@implementation BaseTabBarController
+@implementation AppBaseTabBarController
 
 #pragma mark - life
 

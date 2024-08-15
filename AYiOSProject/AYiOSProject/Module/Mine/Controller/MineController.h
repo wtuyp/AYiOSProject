@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 我的
-@interface MineController : BaseController
+@interface MineController : AppBaseController
 
 @end
 

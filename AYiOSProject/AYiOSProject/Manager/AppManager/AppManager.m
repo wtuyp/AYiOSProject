@@ -10,7 +10,7 @@
 
 #import "AccountManager.h"
 
-#import "BaseNavigationController.h"
+#import "AppBaseNavigationController.h"
 #import "LoginController.h"
 #import "AppWebViewController.h"
 
@@ -75,7 +75,7 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 /// 加载登录模块
 - (void)loadLoginModule {
     LoginController *vc = [[LoginController alloc] init];
-    BaseNavigationController *navi = [[BaseNavigationController alloc] initWithRootViewController:vc];
+    AppBaseNavigationController *navi = [[AppBaseNavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navi;
 }
 

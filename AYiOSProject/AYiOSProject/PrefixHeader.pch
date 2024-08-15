@@ -50,14 +50,13 @@
 #import "UIView+AppLayout.h"
 #import "UIView+AYPopupController.h"
 #import "UIView+AYDataState.h"
-#import "UIViewController+BaseNavi.h"
 
+#import "AppBaseNavigationController.h"
 #import "AppRefreshHeader.h"
 #import "AppRefreshFooterView.h"
 #import "AppAlert.h"
 #import "AppNaviView.h"
 #import "AYLabelView.h"
-#import "BaseNavigationController.h"
 #import "TitleImageButton.h"
 
 #endif /* PrefixHeader_pch */

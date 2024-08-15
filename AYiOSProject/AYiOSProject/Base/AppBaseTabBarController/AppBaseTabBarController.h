@@ -1,5 +1,5 @@
 //   
-//  BaseTabBarController.h
+//  AppBaseTabBarController.h
 //   
 //  Created by alpha yu on 2024/3/19 
 //   
@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// TabBar 基类
-@interface BaseTabBarController : UITabBarController
+@interface AppBaseTabBarController : UITabBarController
 
 @property (nonatomic, assign, readonly) NSInteger selectedItemTag;
 

@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 首页
-@interface HomeController : BaseController
+@interface HomeController : AppBaseController
 
 @end
 

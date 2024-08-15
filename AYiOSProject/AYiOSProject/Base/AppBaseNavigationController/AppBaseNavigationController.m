@@ -1,18 +1,17 @@
 //
-//  BaseNavigationController.m
+//  AppBaseNavigationController.m
 //
 //  Created by MMM on 2021/11/26.
 //
 
-#import "BaseNavigationController.h"
-#import "UIViewController+BaseNavi.h"
+#import "AppBaseNavigationController.h"
 
-@interface BaseNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate, UINavigationBarDelegate>
+@interface AppBaseNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate, UINavigationBarDelegate>
 
 @end
 
 
-@implementation BaseNavigationController
+@implementation AppBaseNavigationController
 
 + (void)initialize {
     UINavigationBar *navigationBar = [UINavigationBar appearance];

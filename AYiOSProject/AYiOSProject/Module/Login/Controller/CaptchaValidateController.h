@@ -5,12 +5,12 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 输入验证码
-@interface CaptchaValidateController : BaseController
+@interface CaptchaValidateController : AppBaseController
 
 @property (nonatomic, copy) NSString *phone;    ///< 电话号码
 

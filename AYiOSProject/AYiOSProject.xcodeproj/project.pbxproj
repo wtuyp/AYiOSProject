@@ -39,13 +39,13 @@
 		EBD3C55B2BC7D20400A24298 /* UITextField+ZGExtand.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2412BC7D20300A24298 /* UITextField+ZGExtand.m */; };
 		EBD3C55C2BC7D20400A24298 /* UIView+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2442BC7D20300A24298 /* UIView+AppCategory.m */; };
 		EBD3C55D2BC7D20400A24298 /* UIView+AppLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2462BC7D20300A24298 /* UIView+AppLayout.m */; };
-		EBD3C55E2BC7D20400A24298 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C24A2BC7D20300A24298 /* BaseController.m */; };
-		EBD3C55F2BC7D20400A24298 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C24D2BC7D20300A24298 /* BaseNavigationController.m */; };
-		EBD3C5602BC7D20400A24298 /* UIViewController+BaseNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C24F2BC7D20300A24298 /* UIViewController+BaseNavi.m */; };
+		EBD3C55E2BC7D20400A24298 /* AppBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C24A2BC7D20300A24298 /* AppBaseController.m */; };
+		EBD3C55F2BC7D20400A24298 /* AppBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C24D2BC7D20300A24298 /* AppBaseNavigationController.m */; };
+		EBD3C5602BC7D20400A24298 /* UIViewController+AppBaseNavi.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C24F2BC7D20300A24298 /* UIViewController+AppBaseNavi.m */; };
 		EBD3C5612BC7D20400A24298 /* AppTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2522BC7D20300A24298 /* AppTabBar.m */; };
 		EBD3C5622BC7D20400A24298 /* AppTabBarItemConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2542BC7D20300A24298 /* AppTabBarItemConfig.m */; };
 		EBD3C5632BC7D20400A24298 /* AppTabBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2562BC7D20300A24298 /* AppTabBarItemView.m */; };
-		EBD3C5642BC7D20400A24298 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2592BC7D20300A24298 /* BaseTabBarController.m */; };
+		EBD3C5642BC7D20400A24298 /* AppBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2592BC7D20300A24298 /* AppBaseTabBarController.m */; };
 		EBD3C5692BC7D20400A24298 /* AccountInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2662BC7D20300A24298 /* AccountInfoController.m */; };
 		EBD3C5742BC7D20400A24298 /* AppWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C2842BC7D20300A24298 /* AppWebViewController.m */; };
 		EBD3C5AF2BC7D20400A24298 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C30D2BC7D20300A24298 /* HomeController.m */; };
@@ -161,20 +161,20 @@
 		EBD3C2442BC7D20300A24298 /* UIView+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AppCategory.m"; sourceTree = "<group>"; };
 		EBD3C2452BC7D20300A24298 /* UIView+AppLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AppLayout.h"; sourceTree = "<group>"; };
 		EBD3C2462BC7D20300A24298 /* UIView+AppLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AppLayout.m"; sourceTree = "<group>"; };
-		EBD3C2492BC7D20300A24298 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
-		EBD3C24A2BC7D20300A24298 /* BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
-		EBD3C24C2BC7D20300A24298 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
-		EBD3C24D2BC7D20300A24298 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
-		EBD3C24E2BC7D20300A24298 /* UIViewController+BaseNavi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BaseNavi.h"; sourceTree = "<group>"; };
-		EBD3C24F2BC7D20300A24298 /* UIViewController+BaseNavi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BaseNavi.m"; sourceTree = "<group>"; };
+		EBD3C2492BC7D20300A24298 /* AppBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBaseController.h; sourceTree = "<group>"; };
+		EBD3C24A2BC7D20300A24298 /* AppBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBaseController.m; sourceTree = "<group>"; };
+		EBD3C24C2BC7D20300A24298 /* AppBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBaseNavigationController.h; sourceTree = "<group>"; };
+		EBD3C24D2BC7D20300A24298 /* AppBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBaseNavigationController.m; sourceTree = "<group>"; };
+		EBD3C24E2BC7D20300A24298 /* UIViewController+AppBaseNavi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AppBaseNavi.h"; sourceTree = "<group>"; };
+		EBD3C24F2BC7D20300A24298 /* UIViewController+AppBaseNavi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AppBaseNavi.m"; sourceTree = "<group>"; };
 		EBD3C2512BC7D20300A24298 /* AppTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTabBar.h; sourceTree = "<group>"; };
 		EBD3C2522BC7D20300A24298 /* AppTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTabBar.m; sourceTree = "<group>"; };
 		EBD3C2532BC7D20300A24298 /* AppTabBarItemConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTabBarItemConfig.h; sourceTree = "<group>"; };
 		EBD3C2542BC7D20300A24298 /* AppTabBarItemConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTabBarItemConfig.m; sourceTree = "<group>"; };
 		EBD3C2552BC7D20300A24298 /* AppTabBarItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTabBarItemView.h; sourceTree = "<group>"; };
 		EBD3C2562BC7D20300A24298 /* AppTabBarItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTabBarItemView.m; sourceTree = "<group>"; };
-		EBD3C2582BC7D20300A24298 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
-		EBD3C2592BC7D20300A24298 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		EBD3C2582BC7D20300A24298 /* AppBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBaseTabBarController.h; sourceTree = "<group>"; };
+		EBD3C2592BC7D20300A24298 /* AppBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppBaseTabBarController.m; sourceTree = "<group>"; };
 		EBD3C2652BC7D20300A24298 /* AccountInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoController.h; sourceTree = "<group>"; };
 		EBD3C2662BC7D20300A24298 /* AccountInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoController.m; sourceTree = "<group>"; };
 		EBD3C2832BC7D20300A24298 /* AppWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppWebViewController.h; sourceTree = "<group>"; };
@@ -599,24 +599,24 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		EBD3C24B2BC7D20300A24298 /* BaseController */ = {
+		EBD3C24B2BC7D20300A24298 /* AppBaseController */ = {
 			isa = PBXGroup;
 			children = (
-				EBD3C2492BC7D20300A24298 /* BaseController.h */,
-				EBD3C24A2BC7D20300A24298 /* BaseController.m */,
+				EBD3C2492BC7D20300A24298 /* AppBaseController.h */,
+				EBD3C24A2BC7D20300A24298 /* AppBaseController.m */,
 			);
-			path = BaseController;
+			path = AppBaseController;
 			sourceTree = "<group>";
 		};
-		EBD3C2502BC7D20300A24298 /* BaseNavigationController */ = {
+		EBD3C2502BC7D20300A24298 /* AppBaseNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				EBD3C24C2BC7D20300A24298 /* BaseNavigationController.h */,
-				EBD3C24D2BC7D20300A24298 /* BaseNavigationController.m */,
-				EBD3C24E2BC7D20300A24298 /* UIViewController+BaseNavi.h */,
-				EBD3C24F2BC7D20300A24298 /* UIViewController+BaseNavi.m */,
+				EBD3C24C2BC7D20300A24298 /* AppBaseNavigationController.h */,
+				EBD3C24D2BC7D20300A24298 /* AppBaseNavigationController.m */,
+				EBD3C24E2BC7D20300A24298 /* UIViewController+AppBaseNavi.h */,
+				EBD3C24F2BC7D20300A24298 /* UIViewController+AppBaseNavi.m */,
 			);
-			path = BaseNavigationController;
+			path = AppBaseNavigationController;
 			sourceTree = "<group>";
 		};
 		EBD3C2572BC7D20300A24298 /* AppTabBar */ = {
@@ -632,22 +632,22 @@
 			path = AppTabBar;
 			sourceTree = "<group>";
 		};
-		EBD3C25A2BC7D20300A24298 /* BaseTabBarController */ = {
+		EBD3C25A2BC7D20300A24298 /* AppBaseTabBarController */ = {
 			isa = PBXGroup;
 			children = (
 				EBD3C2572BC7D20300A24298 /* AppTabBar */,
-				EBD3C2582BC7D20300A24298 /* BaseTabBarController.h */,
-				EBD3C2592BC7D20300A24298 /* BaseTabBarController.m */,
+				EBD3C2582BC7D20300A24298 /* AppBaseTabBarController.h */,
+				EBD3C2592BC7D20300A24298 /* AppBaseTabBarController.m */,
 			);
-			path = BaseTabBarController;
+			path = AppBaseTabBarController;
 			sourceTree = "<group>";
 		};
 		EBD3C25B2BC7D20300A24298 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				EBD3C24B2BC7D20300A24298 /* BaseController */,
-				EBD3C2502BC7D20300A24298 /* BaseNavigationController */,
-				EBD3C25A2BC7D20300A24298 /* BaseTabBarController */,
+				EBD3C24B2BC7D20300A24298 /* AppBaseController */,
+				EBD3C2502BC7D20300A24298 /* AppBaseNavigationController */,
+				EBD3C25A2BC7D20300A24298 /* AppBaseTabBarController */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1181,7 +1181,7 @@
 				EBD3C6CC2BC7D20400A24298 /* StringsPickerPopupView.m in Sources */,
 				EBD3C55C2BC7D20400A24298 /* UIView+AppCategory.m in Sources */,
 				EBD3C6C72BC7D20400A24298 /* UITableView+AppIndexData.m in Sources */,
-				EBD3C55F2BC7D20400A24298 /* BaseNavigationController.m in Sources */,
+				EBD3C55F2BC7D20400A24298 /* AppBaseNavigationController.m in Sources */,
 				EBD3C5592BC7D20400A24298 /* UITableView+AppPageData.m in Sources */,
 				EBD3C5B92BC7D20400A24298 /* CaptchaGetApi.m in Sources */,
 				EBD3C6DE2BC7D20400A24298 /* AppRefreshHeader.m in Sources */,
@@ -1203,7 +1203,7 @@
 				EBD3C6DB2BC7D20400A24298 /* NetworkManager.m in Sources */,
 				EBD3C6C12BC7D20400A24298 /* JXCategoryTitleBackgroundView.m in Sources */,
 				EBD3C62C2BC7D20400A24298 /* AppManager.m in Sources */,
-				EBD3C5642BC7D20400A24298 /* BaseTabBarController.m in Sources */,
+				EBD3C5642BC7D20400A24298 /* AppBaseTabBarController.m in Sources */,
 				EBD3C7202BC8C1BD00A24298 /* CaptchaValidateApi.m in Sources */,
 				EBD3C6CE2BC7D20400A24298 /* AYDataStateView.m in Sources */,
 				EBD3C5AF2BC7D20400A24298 /* HomeController.m in Sources */,
@@ -1214,7 +1214,7 @@
 				EBD3C5B82BC7D20400A24298 /* LogoutApi.m in Sources */,
 				EBD3C6282BC7D20400A24298 /* AccountInfoApi.m in Sources */,
 				EBD3C6BF2BC7D20400A24298 /* JXCategoryTitleBackgroundCell.m in Sources */,
-				EBD3C55E2BC7D20400A24298 /* BaseController.m in Sources */,
+				EBD3C55E2BC7D20400A24298 /* AppBaseController.m in Sources */,
 				EBD3C54A2BC7D20400A24298 /* CALayer+AppCategory.m in Sources */,
 				EB13DF542BE0E64200068D70 /* HomeListCell.m in Sources */,
 				EBD3C5622BC7D20400A24298 /* AppTabBarItemConfig.m in Sources */,
@@ -1240,7 +1240,7 @@
 				EBD3C5572BC7D20400A24298 /* UINavigationController+AppCategory.m in Sources */,
 				EBD3C62B2BC7D20400A24298 /* AppDelegate+AppManager.m in Sources */,
 				EB92093D2BFDE47200D48B32 /* TableIndexDemoController.m in Sources */,
-				EBD3C5602BC7D20400A24298 /* UIViewController+BaseNavi.m in Sources */,
+				EBD3C5602BC7D20400A24298 /* UIViewController+AppBaseNavi.m in Sources */,
 				EBD3C5BC2BC7D20400A24298 /* CaptchaValidateController.m in Sources */,
 				EBD3C6D92BC7D20400A24298 /* NetworkBasePageResponse.m in Sources */,
 				EBD3C5632BC7D20400A24298 /* AppTabBarItemView.m in Sources */,

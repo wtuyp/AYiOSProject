@@ -5,13 +5,13 @@
 //   
    
 
-#import "BaseController.h"
+#import "AppBaseController.h"
 #import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 网页
-@interface AppWebViewController : BaseController
+@interface AppWebViewController : AppBaseController
 
 @property (nonatomic, strong, readonly) WKWebView *webView;
 

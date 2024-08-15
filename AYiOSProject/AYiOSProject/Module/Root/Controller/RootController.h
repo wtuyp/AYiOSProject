@@ -4,7 +4,7 @@
 //  Created by alpha yu on 2021/11/26.
 //
 
-#import "BaseTabBarController.h"
+#import "AppBaseTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, AppTabBarItem) {
     AppTabBarItemMine,      // 我的
 };
 
-@interface RootController : BaseTabBarController
+@interface RootController : AppBaseTabBarController
 
 @end
 

@@ -1,5 +1,5 @@
 //
-//  BaseController.h
+//  AppBaseController.h
 //
 //  Created by MMM on 2021/11/26.
 //
@@ -9,7 +9,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /// 控制器基类
-@interface BaseController : UIViewController
+@interface AppBaseController : UIViewController
 
 @property (nonatomic, assign) BOOL firstLoading; ///< 首次加载
 
