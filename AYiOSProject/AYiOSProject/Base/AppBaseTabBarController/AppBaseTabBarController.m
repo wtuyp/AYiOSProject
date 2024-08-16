@@ -109,7 +109,7 @@
 
 #pragma mark - public
 
-- (NSArray *)tabBarControllers {
+- (NSArray<__kindof UIViewController *> *)tabBarControllers {
     return nil;
 }
 

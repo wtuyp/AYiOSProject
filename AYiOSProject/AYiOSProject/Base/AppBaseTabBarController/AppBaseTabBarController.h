@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) NSInteger selectedItemTag;
 
-// 配置子控制器，子类重写，要设置控制器的 AppTabBarItemConfig（重要）
-- (NSArray *)tabBarControllers;
+/// 配置子控制器，子类重写，要设置控制器的 AppTabBarItemConfig（重要）
+- (NSArray<__kindof UIViewController *> *)tabBarControllers;
 
 /// 是否可以切换，子类重写
 - (BOOL)canSwitchItemToTag:(NSInteger)tag;

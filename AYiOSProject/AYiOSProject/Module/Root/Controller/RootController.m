@@ -27,7 +27,7 @@
 
 #pragma mark - override
 
-- (NSArray *)tabBarControllers {
+- (NSArray<__kindof UIViewController *> *)tabBarControllers {
     HomeController *vc1 = [[HomeController alloc] init];
     AppBaseNavigationController *nav1 = [[AppBaseNavigationController alloc] initWithRootViewController:vc1];
     nav1.app_tabBarItemConfig = [AppTabBarItemConfig configWithTitle:@"首页" image:IMAGE(@"tabbar_home_normal") selectedImage:IMAGE(@"tabbar_home_selected") tag:AppTabBarItemHome];

@@ -6,6 +6,7 @@
    
 
 #import "StringsPickerPopupView.h"
+#import <BRPickerView/BRPickerView.h>
 
 @interface StringsPickerPopupView ()
 

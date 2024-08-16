@@ -10,10 +10,8 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import <BRPickerView/BRPickerView.h>
 #import <JKCategories/JKCategories.h>
 #import <Masonry/Masonry.h>
-#import <MJRefresh/MJRefresh.h>
 #import <MMKV/MMKV.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <SDWebImage/SDWebImage.h>
@@ -25,8 +23,8 @@
 #import "ModelTypeDefine.h"
 #import "AppUtils.h"
 #import "UIUtils.h"
-#import "AppManager.h"
 #import "AccountManager.h"
+#import "AppManager.h"
 #import "NetworkManager.h"
 
 #import "MBProgressHUD+AppCategory.h"
