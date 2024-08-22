@@ -12,13 +12,13 @@
 
 @implementation UIView (AppLayoutVertical)
 
-- (void)verticalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                 itemHeight:(CGFloat)itemHeight
-                                itemSpacing:(CGFloat)itemSpacing
-                                 topSpacing:(CGFloat)topSpacing
-                              bottomSpacing:(CGFloat)bottomSpacing
-                                leadSpacing:(CGFloat)leadSpacing
-                                tailSpacing:(CGFloat)tailSpacing {
+- (void)verticalLayoutLeftAlignSubviewsWithItemWidth:(CGFloat)itemWidth
+                                          itemHeight:(CGFloat)itemHeight
+                                         itemSpacing:(CGFloat)itemSpacing
+                                          topSpacing:(CGFloat)topSpacing
+                                       bottomSpacing:(CGFloat)bottomSpacing
+                                         leadSpacing:(CGFloat)leadSpacing
+                                         tailSpacing:(CGFloat)tailSpacing {
     if (self.subviews.count < 1) {
         return;
     }
@@ -32,6 +32,8 @@
             if (itemWidth) {
                 make.width.mas_equalTo(itemWidth);
                 make.right.mas_lessThanOrEqualTo(-tailSpacing);
+            } else {
+                make.right.mas_equalTo(-tailSpacing);
             }
             if (itemHeight) {
                 make.height.mas_equalTo(itemHeight);
@@ -51,10 +53,10 @@
     }
 }
 
-- (void)verticalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                 itemHeight:(CGFloat)itemHeight
-                                itemSpacing:(CGFloat)itemSpacing {
-    [self verticalLayoutSubviewsWithItemWidth:itemWidth itemHeight:itemHeight itemSpacing:itemSpacing topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
+- (void)verticalLayoutLeftAlignSubviewsWithItemWidth:(CGFloat)itemWidth
+                                          itemHeight:(CGFloat)itemHeight
+                                         itemSpacing:(CGFloat)itemSpacing {
+    [self verticalLayoutLeftAlignSubviewsWithItemWidth:itemWidth itemHeight:itemHeight itemSpacing:itemSpacing topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
 }
 
 - (void)verticalLayoutSubviewsWithItemHeight:(CGFloat)itemHeight
@@ -63,33 +65,7 @@
                                bottomSpacing:(CGFloat)bottomSpacing
                                  leadSpacing:(CGFloat)leadSpacing
                                  tailSpacing:(CGFloat)tailSpacing {
-    if (self.subviews.count < 1) {
-        return;
-    }
-    
-    UIView *prev = nil;
-    for (NSInteger currentRow = 0; currentRow < self.subviews.count; currentRow++) {
-        UIView *view = self.subviews[currentRow];
-        
-        [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(leadSpacing);
-            make.right.mas_equalTo(-tailSpacing);
-            if (itemHeight) {
-                make.height.mas_equalTo(itemHeight);
-            }
-            
-            if (currentRow == 0) {  // 第一行
-                make.top.mas_equalTo(topSpacing);
-            }
-            if (currentRow == self.subviews.count - 1) {    // 最后一行
-                make.bottom.mas_lessThanOrEqualTo(-bottomSpacing);
-            }
-            if (currentRow != 0) {  // 非第一行
-                make.top.equalTo(prev.mas_bottom).offset(itemSpacing);
-            }
-        }];
-        prev = view;
-    }
+    [self verticalLayoutLeftAlignSubviewsWithItemWidth:0 itemHeight:itemHeight itemSpacing:itemSpacing topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
 }
 
 - (void)verticalLayoutSubviewsWithItemHeight:(CGFloat)itemHeight

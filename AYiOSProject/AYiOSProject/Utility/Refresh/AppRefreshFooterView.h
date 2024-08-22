@@ -4,8 +4,7 @@
 //  Created by MMM on 2021/7/1.
 //
 
-#import "MJRefreshAutoNormalFooter.h"
-#import <MJRefresh/MJRefresh.h>
+#import <MJRefresh/MJRefreshAutoNormalFooter.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

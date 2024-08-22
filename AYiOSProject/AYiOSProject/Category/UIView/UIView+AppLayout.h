@@ -44,22 +44,22 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
  子视图 可配置宽度、高度、间距。
  itemWidth, itemHeight 为 0，表示自适应。
  */
-- (void)verticalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                 itemHeight:(CGFloat)itemHeight
-                                itemSpacing:(CGFloat)itemSpacing
-                                 topSpacing:(CGFloat)topSpacing
-                              bottomSpacing:(CGFloat)bottomSpacing
-                                leadSpacing:(CGFloat)leadSpacing
-                                tailSpacing:(CGFloat)tailSpacing;
+- (void)verticalLayoutLeftAlignSubviewsWithItemWidth:(CGFloat)itemWidth
+                                          itemHeight:(CGFloat)itemHeight
+                                         itemSpacing:(CGFloat)itemSpacing
+                                          topSpacing:(CGFloat)topSpacing
+                                       bottomSpacing:(CGFloat)bottomSpacing
+                                         leadSpacing:(CGFloat)leadSpacing
+                                         tailSpacing:(CGFloat)tailSpacing;
 
 /**
  垂直布局，左对齐。
  子视图 可配置宽度、高度、间距。
  itemWidth, itemHeight 为 0，表示自适应。
  */
-- (void)verticalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                 itemHeight:(CGFloat)itemHeight
-                                itemSpacing:(CGFloat)itemSpacing;
+- (void)verticalLayoutLeftAlignSubviewsWithItemWidth:(CGFloat)itemWidth
+                                          itemHeight:(CGFloat)itemHeight
+                                         itemSpacing:(CGFloat)itemSpacing;
 
 /**
  垂直布局，宽度充满。可配置边距。(注意：容器宽度必需固定)

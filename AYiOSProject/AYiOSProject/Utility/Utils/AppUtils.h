@@ -16,8 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// App推送通知是否已授权
 + (void)isAppNotificationAuthorized:(void(^)(BOOL isAuthorized))result;
 
-/// 在手机的设置中打开App推送通知设置界面
+/// 在手机的设置中打开 App 推送通知设置界面
 + (void)openAppNotificationSetting;
+
+/// 在手机的设置中打开 App 设置
++ (void)openAppSetting;
 
 @end
 

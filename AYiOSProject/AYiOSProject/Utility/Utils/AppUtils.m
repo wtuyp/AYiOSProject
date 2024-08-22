@@ -31,11 +31,14 @@
 
 + (void)openAppNotificationSetting {
     if (@available(iOS 15.4, *)) {
-        APP_OPEN_NOTIFICATION_SETTING
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenNotificationSettingsURLString] options:@{} completionHandler:nil];
     } else {
-        APP_OPEN_SETTING
+        [AppUtils openAppSetting];
     }
 }
 
++ (void)openAppSetting {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+}
 
 @end

@@ -115,9 +115,7 @@
 
 - (__kindof NetworkBaseRequest *)retryRequest {
     NetworkBaseRequest *request = [self yy_modelCopy];
-    request.success = self.success;
-    request.failure = self.failure;
-    [request startRequest];
+    [request startRequestWithSuccess:self.success failure:self.failure];
     return request;
 }
 

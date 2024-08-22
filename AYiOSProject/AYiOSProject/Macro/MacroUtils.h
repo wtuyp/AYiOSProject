@@ -16,7 +16,7 @@
 #define FONT_NUMBER(size)       [UIFont systemFontOfSize:SCALE(size)]
 
 // log 打印
-#ifdef DEBUG
+#if DEBUG_LOG
     #define NSLog(fmt, ...)     printf("%s: %d >>> %s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String])
     #define printf(...)         printf(__VA_ARGS__)
 #else
@@ -46,10 +46,6 @@
 #define STRONG_OBJ(object)      __strong typeof(object) object = weak##object;
 #define WEAK_SELF               __weak typeof(self) weakSelf = self;
 #define STRONG_SELF             __strong typeof(self) self = weakSelf;
-
-// 打开设置
-#define APP_OPEN_SETTING        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
-#define APP_OPEN_NOTIFICATION_SETTING   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenNotificationSettingsURLString] options:@{} completionHandler:nil];
 
 #define APP_NAME                [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"]
 

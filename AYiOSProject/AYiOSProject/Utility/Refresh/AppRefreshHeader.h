@@ -4,8 +4,7 @@
 //  Created by yxg on 2023/2/9.
 //
 
-#import "MJRefreshNormalHeader.h"
-#import <MJRefresh/MJRefresh.h>
+#import <MJRefresh/MJRefreshNormalHeader.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
