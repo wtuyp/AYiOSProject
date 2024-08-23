@@ -40,7 +40,7 @@ NSString *const NetworkResponseParamData = @"data";
 #pragma mark - public
 
 - (void)startRequest:(NetworkBaseRequest *)request {
-#if DEBUG
+#if DEBUG_LOG
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
     if (request.userInfo) {
         [userInfo addEntriesFromDictionary:request.userInfo];
@@ -120,7 +120,7 @@ NSString *const NetworkResponseParamData = @"data";
 #pragma mark - YTKRequestDelegate
 
 - (void)requestFinished:(NetworkBaseRequest *)request {
-#if DEBUG
+#if DEBUG_LOG
     [self _logger:request task:request.requestTask responseObject:request.responseObject error:nil];
 #endif
     
@@ -192,7 +192,7 @@ NSString *const NetworkResponseParamData = @"data";
 }
 
 - (void)requestFailed:(NetworkBaseRequest *)request {
-#if DEBUG
+#if DEBUG_LOG
     [self _logger:request task:request.requestTask responseObject:nil error:request.error];
 #endif
     
