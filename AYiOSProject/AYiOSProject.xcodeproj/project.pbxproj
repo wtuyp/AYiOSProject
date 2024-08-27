@@ -14,6 +14,7 @@
 		EB9F55C12BCCB78900333706 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BA2BCCB78800333706 /* GradientButton.m */; };
 		EB9F55C22BCCB78900333706 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BC2BCCB78800333706 /* GradientView.m */; };
 		EB9F55C32BCCB78900333706 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F55BF2BCCB78900333706 /* BadgeView.m */; };
+		EB9FC2B12C7DA3F2005F2A58 /* NSTimer+AppCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9FC2AF2C7DA3F2005F2A58 /* NSTimer+AppCategory.m */; };
 		EBD3C1C22BC7B65E00A24298 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C1C12BC7B65E00A24298 /* AppDelegate.m */; };
 		EBD3C1CD2BC7B66000A24298 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBD3C1CC2BC7B66000A24298 /* Assets.xcassets */; };
 		EBD3C1D02BC7B66000A24298 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EBD3C1CF2BC7B66000A24298 /* Base */; };
@@ -112,6 +113,8 @@
 		EB9F55BC2BCCB78800333706 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		EB9F55BE2BCCB78900333706 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
 		EB9F55BF2BCCB78900333706 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
+		EB9FC2AE2C7DA3F2005F2A58 /* NSTimer+AppCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+AppCategory.h"; sourceTree = "<group>"; };
+		EB9FC2AF2C7DA3F2005F2A58 /* NSTimer+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+AppCategory.m"; sourceTree = "<group>"; };
 		EBD3C1BD2BC7B65E00A24298 /* AYiOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYiOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD3C1C02BC7B65E00A24298 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EBD3C1C12BC7B65E00A24298 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -329,6 +332,15 @@
 				EB9F55BF2BCCB78900333706 /* BadgeView.m */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		EB9FC2B02C7DA3F2005F2A58 /* NSTimer */ = {
+			isa = PBXGroup;
+			children = (
+				EB9FC2AE2C7DA3F2005F2A58 /* NSTimer+AppCategory.h */,
+				EB9FC2AF2C7DA3F2005F2A58 /* NSTimer+AppCategory.m */,
+			);
+			path = NSTimer;
 			sourceTree = "<group>";
 		};
 		EBBE36AA2C6DEE670086CFF6 /* Resource */ = {
@@ -586,6 +598,7 @@
 				EBD3C21D2BC7D20300A24298 /* NSDictionary */,
 				EBD3C2222BC7D20300A24298 /* NSObject */,
 				EBD3C2252BC7D20300A24298 /* NSString */,
+				EB9FC2B02C7DA3F2005F2A58 /* NSTimer */,
 				EBD3C2282BC7D20300A24298 /* UIButton */,
 				EBD3C22B2BC7D20300A24298 /* UIColor */,
 				EBD3C22E2BC7D20300A24298 /* UIImage */,
@@ -1186,6 +1199,7 @@
 				EBD3C5B92BC7D20400A24298 /* CaptchaGetApi.m in Sources */,
 				EBD3C6DE2BC7D20400A24298 /* AppRefreshHeader.m in Sources */,
 				EBD3C6E32BC7D20400A24298 /* UIUtils.m in Sources */,
+				EB9FC2B12C7DA3F2005F2A58 /* NSTimer+AppCategory.m in Sources */,
 				EBD3C6D82BC7D20400A24298 /* NetworkBasePageRequest.m in Sources */,
 				EBD3C6CF2BC7D20400A24298 /* UIView+AYDataState.m in Sources */,
 				EBD3C5612BC7D20400A24298 /* AppTabBar.m in Sources */,
