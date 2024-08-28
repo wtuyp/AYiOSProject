@@ -9,6 +9,7 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import "AccountManager.h"
+#import "NetworkManager.h"
 
 #import "AppBaseNavigationController.h"
 #import "LoginController.h"
@@ -90,6 +91,8 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
     if (@available(iOS 15.0, *)) {
         UITableView.appearance.sectionHeaderTopPadding = 0;
     }
+    
+    NetworkManager.shared.baseUrl = URL_NETWORK_REQUEST;
 }
 
 - (void)initAfterRootModuleWithLaunchOptions:(NSDictionary *)launchOptions {

@@ -30,14 +30,6 @@
 /// 时间戳使用毫秒，1:使用，0:不使用
 #define TIMESTAMP_MILLISECOND_ENABLE    1
 
-// Universal Links
-#define URL_UNIVERSAL_LINK              @"https://api.app.com/app/ios/name"
-
-// 用户协议
-#define URL_USER_AGREEMENT              @"http://www.ay.com/user"
-// 隐私政策
-#define URL_PRIVACY_POLICY              @"http://www.ay.com/privacy"
-
 // key 前缀
 #define APP_KEY_PREFIX                  @"ay.app.key."
 

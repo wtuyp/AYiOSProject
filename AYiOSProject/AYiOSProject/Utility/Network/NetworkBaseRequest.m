@@ -7,7 +7,6 @@
 #import "NetworkBaseRequest.h"
 #import <AFNetworking/AFNetworking.h>
 #import "NetworkManager.h"
-#import "NetworkUrl.h"
 
 #import "AccountManager.h"
 
@@ -16,9 +15,9 @@
 #pragma mark - override
 
 /// 请求的BaseURL
-- (NSString *)baseUrl {
-    return BASE_URL;
-}
+//- (NSString *)baseUrl {
+//    return BASE_URL;
+//}
 
 /// 请求方法
 - (YTKRequestMethod)requestMethod {

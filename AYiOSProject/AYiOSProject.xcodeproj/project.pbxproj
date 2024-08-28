@@ -115,6 +115,7 @@
 		EB9F55BF2BCCB78900333706 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
 		EB9FC2AE2C7DA3F2005F2A58 /* NSTimer+AppCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+AppCategory.h"; sourceTree = "<group>"; };
 		EB9FC2AF2C7DA3F2005F2A58 /* NSTimer+AppCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+AppCategory.m"; sourceTree = "<group>"; };
+		EB9FC2BE2C7EC199005F2A58 /* MacroUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroUrl.h; sourceTree = "<group>"; };
 		EBD3C1BD2BC7B65E00A24298 /* AYiOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AYiOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD3C1C02BC7B65E00A24298 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EBD3C1C12BC7B65E00A24298 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -267,7 +268,6 @@
 		EBD3C5302BC7D20400A24298 /* NetworkBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBaseRequest.m; sourceTree = "<group>"; };
 		EBD3C5312BC7D20400A24298 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		EBD3C5322BC7D20400A24298 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
-		EBD3C5332BC7D20400A24298 /* NetworkUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUrl.h; sourceTree = "<group>"; };
 		EBD3C5352BC7D20400A24298 /* NoticeBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoticeBarView.h; sourceTree = "<group>"; };
 		EBD3C5362BC7D20400A24298 /* NoticeBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoticeBarView.m; sourceTree = "<group>"; };
 		EBD3C5382BC7D20400A24298 /* AppRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppRefreshFooterView.h; sourceTree = "<group>"; };
@@ -864,6 +864,7 @@
 				EBD3C4442BC7D20300A24298 /* MacroNotify.h */,
 				EBD3C5232BC7D20400A24298 /* MacroObjc.h */,
 				EBD3C4452BC7D20300A24298 /* MacroOpen.h */,
+				EB9FC2BE2C7EC199005F2A58 /* MacroUrl.h */,
 				EBD3C4462BC7D20300A24298 /* MacroUtils.h */,
 			);
 			path = Macro;
@@ -1005,7 +1006,6 @@
 				EBD3C5302BC7D20400A24298 /* NetworkBaseRequest.m */,
 				EBD3C5312BC7D20400A24298 /* NetworkManager.h */,
 				EBD3C5322BC7D20400A24298 /* NetworkManager.m */,
-				EBD3C5332BC7D20400A24298 /* NetworkUrl.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";

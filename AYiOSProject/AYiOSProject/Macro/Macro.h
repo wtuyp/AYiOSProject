@@ -12,6 +12,7 @@
 #import "MacroNotify.h"
 #import "MacroObjc.h"
 #import "MacroOpen.h"
+#import "MacroUrl.h"
 #import "MacroUtils.h"
 
 #endif /* Macro_h */
