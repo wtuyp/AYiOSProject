@@ -17,4 +17,9 @@
 #endif
 }
 
+- (NSInteger)millisecondIntervalFrom1970 {
+    NSTimeInterval timeInterval = [self timeIntervalSince1970];
+    return (NSInteger)(timeInterval * 1000.0);
+}
+
 @end

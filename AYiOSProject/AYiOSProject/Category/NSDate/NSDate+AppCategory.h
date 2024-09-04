@@ -11,10 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSDate (AppCategory)
 
 /**
- 从1970年以来的时间戳整数（根据TIMESTAMP_MILLISECOND_ENABLE配置, 返回秒或毫秒）
+ 根据 TIMESTAMP_MILLISECOND_ENABLE 配置, 返回从1970年0时0分0秒起的秒或毫秒整数
  可用来替换 timeIntervalSince1970 方法
  */
 @property (nonatomic, readonly) NSInteger timeIntervalFrom1970;
+
+/// 从1970年0时0分0秒起的毫秒整数
+@property (nonatomic, readonly) NSInteger millisecondIntervalFrom1970;
 
 @end
 
