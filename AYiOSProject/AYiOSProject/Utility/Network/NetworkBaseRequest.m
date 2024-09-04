@@ -6,6 +6,7 @@
 
 #import "NetworkBaseRequest.h"
 #import <AFNetworking/AFNetworking.h>
+#import <YYModel/YYModel.h>
 #import "NetworkManager.h"
 
 #import "AccountManager.h"
@@ -64,7 +65,7 @@
 
 #pragma mark - yymodel
 
-/// 屏蔽BaseRequest及父类属性
+/// 屏蔽 NetworkBaseRequest 及父类属性
 + (NSArray *)modelPropertyBlacklist {
     static NSMutableArray *propertyNames = nil;
     static dispatch_once_t onceToken;

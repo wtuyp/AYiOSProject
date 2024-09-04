@@ -45,7 +45,7 @@ NSString *const NetworkResponseParamData = @"data";
     if (request.userInfo) {
         [userInfo addEntriesFromDictionary:request.userInfo];
     }
-    userInfo[@"requestStartDate"] = [NSDate date];
+    userInfo[@"requestStartDate"] = [NSDate date];  // 用于确定请求时长
     request.userInfo = userInfo;
 #endif
     request.delegate = (id<YTKRequestDelegate>)self;
