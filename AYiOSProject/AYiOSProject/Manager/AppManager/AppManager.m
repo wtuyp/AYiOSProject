@@ -71,7 +71,6 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 - (void)loadRootModule {
     RootController *vc = [[RootController alloc] init];
     self.window.rootViewController = vc;
-    self.rootController = vc;
 }
 
 /// 加载登录模块
@@ -155,7 +154,7 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 //    };
 //    BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:vc];
 //    nav.modalPresentationStyle = UIModalPresentationFullScreen;
-//    [self.rootController presentViewController:nav animated:YES completion:nil];
+//    [UIUtils.rootViewController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)showUserAgreementController {
