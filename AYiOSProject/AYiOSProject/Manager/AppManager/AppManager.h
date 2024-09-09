@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isFirstTimeLaunch;           ///< 是否是第一次打开app
 @property (nonatomic, strong) UIWindow *window;                 ///< app window
-@property (nonatomic, strong) RootController *rootController;   ///< 根控制器
+@property (nonatomic, weak) RootController *rootController;     ///< 根控制器
 
 
 + (instancetype)shared;

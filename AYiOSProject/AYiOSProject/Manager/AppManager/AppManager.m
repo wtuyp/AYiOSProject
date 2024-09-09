@@ -69,8 +69,9 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 
 /// 加载根模块
 - (void)loadRootModule {
-    self.rootController = [[RootController alloc] init];
-    self.window.rootViewController = self.rootController;
+    RootController *vc = [[RootController alloc] init];
+    self.window.rootViewController = vc;
+    self.rootController = vc;
 }
 
 /// 加载登录模块
