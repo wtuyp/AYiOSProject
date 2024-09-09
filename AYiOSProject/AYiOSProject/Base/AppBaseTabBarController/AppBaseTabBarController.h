@@ -25,4 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIViewController (AppBaseTabBarController)
+
+@property (nonatomic, readonly) AppBaseTabBarController *app_baseTabBarController;
+
+@end
+
 NS_ASSUME_NONNULL_END

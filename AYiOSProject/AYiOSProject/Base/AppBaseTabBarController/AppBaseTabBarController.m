@@ -119,12 +119,17 @@
         return;
     }
     
-    if (self.customTabBar.selectedItemTag == tag) {
-        return;
+    UIViewController *willSelectViewController = [self selectedControllerWithTag:tag];
+    if ([willSelectViewController isKindOfClass:UINavigationController.class]) {
+        UINavigationController *navi = (UINavigationController *)willSelectViewController;
+        BOOL animated = self.customTabBar.selectedItemTag == tag ? YES : NO;
+        [navi popToRootViewControllerAnimated:animated];
     }
     
-    self.customTabBar.selectedItemTag = tag;
-    self.selectedViewController = [self selectedControllerWithTag:tag];
+    if (self.customTabBar.selectedItemTag != tag) {
+        self.customTabBar.selectedItemTag = tag;
+        self.selectedViewController = willSelectViewController;
+    }
     [self.tabBar bringSubviewToFront:self.customTabBar];    // 始终保持在最前面
 }
 
@@ -150,5 +155,13 @@
     return nil;
 }
 
+
+@end
+
+@implementation UIViewController (AppBaseTabBarController)
+
+- (AppBaseTabBarController *)app_baseTabBarController {
+    return (AppBaseTabBarController *)self.tabBarController;
+}
 
 @end
