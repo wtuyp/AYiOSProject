@@ -155,8 +155,9 @@ NSString *const NetworkResponseParamData = @"data";
 //                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", responseData);
 //                !request.failure ?: request.failure(NetworkErrorFormat, nil, nil);
 //                return;
-                
-                responseData = nil;
+                if ([data isKindOfClass:NSNull.class]) {
+                    responseData = nil;
+                }
             }
         }
         if (request.success) {
