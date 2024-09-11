@@ -8,6 +8,10 @@
 #import "UIView+AYDataState.h"
 #import <objc/runtime.h>
 
+AYViewDataState const AYViewDataStateHidden = @"ay.view.dataState.hidden";
+AYViewDataState const AYViewDataStateEmpty = @"ay.view.dataState.empty";
+AYViewDataState const AYViewDataStateError = @"ay.view.dataState.error";
+
 @implementation AYDataStateConfig (AYDataState)
 
 /// 默认空数据配置

@@ -8,14 +8,14 @@
 #import <UIKit/UIKit.h>
 #import "AYDataStateConfig.h"
 
-typedef NSInteger AYViewDataState;
+typedef NSString * AYViewDataState NS_TYPED_EXTENSIBLE_ENUM;
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 数据状态 视图
 @interface AYDataStateView : UIView
 
-@property (nonatomic, assign, readonly) AYViewDataState state;  ///< 当前状态
+@property (nonatomic, copy, readonly) AYViewDataState state;    ///< 当前状态
 @property (nonatomic, weak) UIView *attachedView;               ///< 需要依附的视图
 @property (nonatomic, assign) CGPoint centerOffset;             ///< 中心偏移
 

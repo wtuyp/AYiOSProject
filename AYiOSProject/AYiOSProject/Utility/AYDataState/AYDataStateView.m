@@ -14,8 +14,8 @@
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) UIButton *actionBtn;
 
-@property (nonatomic, strong) NSMutableDictionary<NSNumber *, AYDataStateConfig *> *stateConfigDic;
-@property (nonatomic, assign) AYViewDataState state;
+@property (nonatomic, strong) NSMutableDictionary<AYViewDataState, AYDataStateConfig *> *stateConfigDic;
+@property (nonatomic, copy) AYViewDataState state;
 
 @end
 
@@ -113,14 +113,14 @@
 
 - (void)setConfig:(AYDataStateConfig *)config forState:(AYViewDataState)state {
     if (config) {
-        [self.stateConfigDic setObject:config forKey:@(state)];
+        [self.stateConfigDic setObject:config forKey:state];
     } else {
-        [self.stateConfigDic removeObjectForKey:@(state)];
+        [self.stateConfigDic removeObjectForKey:state];
     }
 }
 
 - (AYDataStateConfig *)configForState:(AYViewDataState)state {
-    return [self.stateConfigDic objectForKey:@(state)];
+    return [self.stateConfigDic objectForKey:state];
 }
 
 - (void)updateConfig:(void (^)(AYDataStateConfig * _Nullable config))configBlock forState:(AYViewDataState)state {
