@@ -98,8 +98,7 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
 @interface UIView (AppLayoutHorizontal)
 
 /**
- 水平居左布局，垂直居中对齐。可配置边距。
- 子视图 可配置宽度、高度、间距。
+ 子视图从左到右水平布局。
  itemWidth, itemHeight 为 0, 表示自适应。
  */
 - (void)horizontalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
@@ -111,17 +110,7 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
                                   tailSpacing:(CGFloat)tailSpacing;
 
 /**
- 水平居左布局，垂直居中对齐。
- 子视图 可配置宽度、高度、间距。
- itemWidth, itemHeight 为 0, 表示自适应。
- */
-- (void)horizontalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                   itemHeight:(CGFloat)itemHeight
-                                  itemSpacing:(CGFloat)itemSpacing;
-
-/**
- 水平充满布局，垂直居中对齐。可配置边距。
- 子视图 等间距，可配置宽度。
+ 子视图等间距水平充满布局。
  itemHeight 为 0, 表示高度自适应。
  */
 - (void)horizontalFillLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
@@ -132,16 +121,7 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
                                       tailSpacing:(CGFloat)tailSpacing;
 
 /**
- 水平充满布局，垂直居中对齐。
- 子视图 等间距，可配置宽度。
- itemHeight 为 0, 表示高度自适应。
- */
-- (void)horizontalFillLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                       itemHeight:(CGFloat)itemHeight;
-
-/**
- 水平充满布局，垂直居中对齐。可配置边距。
- 子视图 等宽，可配置间距。
+ 子视图等宽水平充满布局。
  itemHeight 为 0, 表示高度自适应。
  */
 - (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing
@@ -150,35 +130,6 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
                                       bottomSpacing:(CGFloat)bottomSpacing
                                         leadSpacing:(CGFloat)leadSpacing
                                         tailSpacing:(CGFloat)tailSpacing;
-/**
- 水平充满布局，垂直居中对齐。
- 子视图 等宽，可配置间距。
- itemHeight 为 0, 表示高度自适应。
- */
-- (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing
-                                         itemHeight:(CGFloat)itemHeight;
-
-/**
- 水平充满布局，垂直充满。可配置边距。(注意：容器高度必需固定)
- 子视图 等宽，可配置间距。
- */
-- (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing
-                                         topSpacing:(CGFloat)topSpacing
-                                      bottomSpacing:(CGFloat)bottomSpacing
-                                        leadSpacing:(CGFloat)leadSpacing
-                                        tailSpacing:(CGFloat)tailSpacing;
-
-/**
- 水平充满布局，垂直充满。(注意：容器高度必需固定)
- 子视图 等宽，可配置间距。
- */
-- (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing;
-
-/**
- 水平布局，水平充满，垂直充满。(注意：容器高度必需固定)
- 子视图 等宽，0间距。
- */
-- (void)horizontalFillLayoutSubviews;
 
 @end
 

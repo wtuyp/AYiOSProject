@@ -128,15 +128,15 @@
     for (NSInteger index = 0; index < self.subviews.count; index++) {
         UIView *view = self.subviews[index];
         [view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(0);
-            make.top.mas_greaterThanOrEqualTo(topSpacing);
-            make.bottom.mas_lessThanOrEqualTo(-bottomSpacing);
             if (itemWidth) {
                 make.width.mas_equalTo(itemWidth);
             }
             if (itemHeight) {
                 make.height.mas_equalTo(itemHeight);
             }
+            
+            make.top.mas_equalTo(topSpacing);
+            make.bottom.mas_equalTo(-bottomSpacing);
             
             if (index == 0) {   // 第一列
                 make.left.mas_equalTo(leadSpacing);
@@ -152,12 +152,6 @@
     }
 }
 
-- (void)horizontalLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                   itemHeight:(CGFloat)itemHeight
-                                  itemSpacing:(CGFloat)itemSpacing {
-    [self horizontalLayoutSubviewsWithItemWidth:itemWidth itemHeight:itemHeight itemSpacing:itemSpacing topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
-}
-
 - (void)horizontalFillLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
                                        itemHeight:(CGFloat)itemHeight
                                        topSpacing:(CGFloat)topSpacing
@@ -169,22 +163,23 @@
     }
     
     [self.subviews mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(0);
-        make.top.mas_greaterThanOrEqualTo(topSpacing);
-        make.bottom.mas_lessThanOrEqualTo(-bottomSpacing);
-        if (itemWidth) {
-            make.height.mas_equalTo(itemWidth);
-        }
+        make.width.mas_equalTo(itemWidth);
+
         if (itemHeight) {
             make.height.mas_equalTo(itemHeight);
         }
+        
+        make.top.mas_equalTo(topSpacing);
+        make.bottom.mas_equalTo(-bottomSpacing);
+        
+        if (self.subviews.count == 1) {
+            make.left.mas_equalTo(leadSpacing);
+            make.right.mas_equalTo(-tailSpacing);
+        }
     }];
-    [self.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:itemWidth leadSpacing:leadSpacing tailSpacing:tailSpacing];
-}
-
-- (void)horizontalFillLayoutSubviewsWithItemWidth:(CGFloat)itemWidth
-                                       itemHeight:(CGFloat)itemHeight {
-    [self horizontalFillLayoutSubviewsWithItemWidth:itemWidth itemHeight:itemHeight topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
+    if (self.subviews.count > 1) {
+        [self.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:itemWidth leadSpacing:leadSpacing tailSpacing:tailSpacing];
+    }
 }
 
 - (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing
@@ -198,45 +193,22 @@
     }
     
     [self.subviews mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo((topSpacing - bottomSpacing) / 2.0);
-        make.top.mas_greaterThanOrEqualTo(topSpacing);
-        make.bottom.mas_lessThanOrEqualTo(-bottomSpacing);
         if (itemHeight) {
             make.height.mas_equalTo(itemHeight);
         }
-    }];
-    [self.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:itemSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
-}
-
-- (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing
-                                         itemHeight:(CGFloat)itemHeight {
-    [self horizontalFillLayoutSubviewsWithItemSpacing:itemSpacing itemHeight:itemHeight topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
-}
-
-- (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing
-                                         topSpacing:(CGFloat)topSpacing
-                                      bottomSpacing:(CGFloat)bottomSpacing
-                                        leadSpacing:(CGFloat)leadSpacing
-                                        tailSpacing:(CGFloat)tailSpacing {
-    if (self.subviews.count < 1) {
-        return;
-    }
-    
-    [self.subviews mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(topSpacing);
         make.bottom.mas_equalTo(-bottomSpacing);
+        
+        if (self.subviews.count == 1) {
+            make.left.mas_equalTo(leadSpacing);
+            make.right.mas_equalTo(-tailSpacing);
+        }
     }];
-    [self.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:itemSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
+    
+    if (self.subviews.count > 1) {
+        [self.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:itemSpacing leadSpacing:leadSpacing tailSpacing:tailSpacing];
+    }
 }
-
-- (void)horizontalFillLayoutSubviewsWithItemSpacing:(CGFloat)itemSpacing {
-    [self horizontalFillLayoutSubviewsWithItemSpacing:itemSpacing topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
-}
-
-- (void)horizontalFillLayoutSubviews {
-    [self horizontalFillLayoutSubviewsWithItemSpacing:0 topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
-}
-
 
 @end
 
