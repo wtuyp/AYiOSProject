@@ -69,7 +69,7 @@
     [containerView addSubview:itemView1];
     [containerView addSubview:itemView2];
     
-    [containerView verticalLayoutSubviewsWithItemHeight:SCALE(52) itemSpacing:SCALE(11) topSpacing:SCALE(13) bottomSpacing:0 leadSpacing:SCALE(12) tailSpacing:SCALE(12)];
+    [containerView verticalLayoutFillWidthSubviewsWithItemHeight:SCALE(52) itemSpacing:SCALE(11) topSpacing:SCALE(13) bottomSpacing:0 leadSpacing:SCALE(12) tailSpacing:SCALE(12)];
 
 }
 

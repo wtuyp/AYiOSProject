@@ -219,7 +219,7 @@
     [view addSubview:itemView1];
     [view addSubview:itemView2];
     
-    [view verticalLayoutSubviewsWithItemHeight:SCALE(39) itemSpacing:SCALE(14) topSpacing:SCALE(22) bottomSpacing:0 leadSpacing:SCALE(22) tailSpacing:SCALE(22)];
+    [view verticalLayoutFillWidthSubviewsWithItemHeight:SCALE(39) itemSpacing:SCALE(14) topSpacing:SCALE(22) bottomSpacing:0 leadSpacing:SCALE(22) tailSpacing:SCALE(22)];
     
     return view;
 }

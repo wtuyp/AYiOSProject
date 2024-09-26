@@ -40,8 +40,7 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
 @interface UIView (AppLayoutVertical)
 
 /**
- 垂直布局，左对齐。可配置边距。
- 子视图 可配置宽度、高度、间距。
+ 子视图垂直左对齐布局。
  itemWidth, itemHeight 为 0，表示自适应。
  */
 - (void)verticalLayoutLeftAlignSubviewsWithItemWidth:(CGFloat)itemWidth
@@ -53,38 +52,7 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
                                          tailSpacing:(CGFloat)tailSpacing;
 
 /**
- 垂直布局，左对齐。
- 子视图 可配置宽度、高度、间距。
- itemWidth, itemHeight 为 0，表示自适应。
- */
-- (void)verticalLayoutLeftAlignSubviewsWithItemWidth:(CGFloat)itemWidth
-                                          itemHeight:(CGFloat)itemHeight
-                                         itemSpacing:(CGFloat)itemSpacing;
-
-/**
- 垂直布局，宽度充满。可配置边距。(注意：容器宽度必需固定)
- 子视图 可配置高度、间距。
- itemHeight 为 0，表示自适应。
- */
-- (void)verticalLayoutSubviewsWithItemHeight:(CGFloat)itemHeight
-                                 itemSpacing:(CGFloat)itemSpacing
-                                  topSpacing:(CGFloat)topSpacing
-                               bottomSpacing:(CGFloat)bottomSpacing
-                                 leadSpacing:(CGFloat)leadSpacing
-                                 tailSpacing:(CGFloat)tailSpacing;
-
-/**
- 垂直布局，宽度充满。(注意：容器宽度必需固定)
- 子视图 可配置高度、间距。
- itemHeight 为 0，表示自适应。
- */
-- (void)verticalLayoutSubviewsWithItemHeight:(CGFloat)itemHeight
-                                 itemSpacing:(CGFloat)itemSpacing;
-
-
-/**
- 垂直布局，居中对齐。可配置边距。(注意：容器宽度必需固定)
- 子视图 可配置宽度、高度、间距。
+ 子视图垂直居中布局。(注意：容器宽度必需确定)
  itemWidth, itemHeight 为 0，表示自适应。
  */
 - (void)verticalLayoutCenterAlignSubviewsWithItemWidth:(CGFloat)itemWidth
@@ -92,6 +60,17 @@ typedef NS_ENUM(NSInteger, AppLayoutAlignItems) {
                                            itemSpacing:(CGFloat)itemSpacing
                                             topSpacing:(CGFloat)topSpacing
                                          bottomSpacing:(CGFloat)bottomSpacing;
+
+/**
+ 子视图垂直宽度充满布局。(注意：容器宽度必需确定)
+ itemHeight 为 0，表示自适应。
+ */
+- (void)verticalLayoutFillWidthSubviewsWithItemHeight:(CGFloat)itemHeight
+                                          itemSpacing:(CGFloat)itemSpacing
+                                           topSpacing:(CGFloat)topSpacing
+                                        bottomSpacing:(CGFloat)bottomSpacing
+                                          leadSpacing:(CGFloat)leadSpacing
+                                          tailSpacing:(CGFloat)tailSpacing;
 
 @end
 
