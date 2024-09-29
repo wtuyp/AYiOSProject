@@ -33,11 +33,4 @@
 // key 前缀
 #define APP_KEY_PREFIX                  @"ay.app.key."
 
-// 控制台打印控制 0-不打印，1打印
-#if DEBUG
-#define DEBUG_LOG               1
-#else
-#define DEBUG_LOG               0
-#endif
-
 #endif /* MacroConfig_h */

@@ -16,7 +16,7 @@
 #import "AppWebViewController.h"
 
 
-static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
+static NSString *const AppFirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 
 @interface AppManager ()
 
@@ -35,11 +35,11 @@ static NSString *const FirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch";
 }
 
 - (BOOL)isFirstTimeLaunch {
-    return [[MMKV defaultMMKV] getBoolForKey:FirstLaunchKey];
+    return [[MMKV defaultMMKV] getBoolForKey:AppFirstLaunchKey];
 }
 
 - (void)setIsFirstTimeLaunch:(BOOL)isFirstTimeLaunch {
-    [[MMKV defaultMMKV] setBool:isFirstTimeLaunch forKey:FirstLaunchKey];
+    [[MMKV defaultMMKV] setBool:isFirstTimeLaunch forKey:AppFirstLaunchKey];
 }
 
 - (void)didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

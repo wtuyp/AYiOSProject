@@ -15,7 +15,14 @@
 #define FONT_BOLD(size)         [UIFont boldSystemFontOfSize:SCALE(size)]
 #define FONT_NUMBER(size)       [UIFont systemFontOfSize:SCALE(size)]
 
-// log 打印
+// 控制台打印控制 0-不打印，1打印
+#if DEBUG
+#define DEBUG_LOG               1
+#else
+#define DEBUG_LOG               0
+#endif
+
+// 控制台打印
 #if DEBUG_LOG
     #define NSLog(fmt, ...)     printf("%s: %d >>> %s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String])
     #define printf(...)         printf(__VA_ARGS__)
