@@ -14,30 +14,41 @@ extern const NSInteger AppHUDAutomaticallyHideSeconds;
 
 #pragma mark - Loading
 
-+ (MBProgressHUD *)showLoadingInView:(UIView *)view;
-+ (MBProgressHUD *)showLoadingInView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay;
++ (MBProgressHUD *)showLoadingInView:(UIView * _Nullable)view;
++ (MBProgressHUD *)showLoadingInView:(UIView * _Nullable)view hideAfterDelay:(NSTimeInterval)delay;
 
-+ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text inView:(UIView *)view;
-+ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay;
++ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text inView:(UIView * _Nullable)view;
++ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text inView:(UIView * _Nullable)view hideAfterDelay:(NSTimeInterval)delay;
 
-+ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text detailText:(NSString * _Nullable)detailText inView:(UIView *)view;
-+ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text detailText:(NSString * _Nullable)detailText inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay;
++ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text 
+                            detailText:(NSString * _Nullable)detailText
+                                inView:(UIView * _Nullable)view;
++ (MBProgressHUD *)showLoadingWithText:(NSString * _Nullable)text 
+                            detailText:(NSString * _Nullable)detailText
+                                inView:(UIView * _Nullable)view
+                        hideAfterDelay:(NSTimeInterval)delay;
 
 #pragma mark - Text
 
 + (MBProgressHUD *)showWithText:(NSString *)text;
-+ (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView *)view;
-+ (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay;
++ (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView * _Nullable)view;
++ (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView * _Nullable)view hideAfterDelay:(NSTimeInterval)delay;
 
 + (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText;
-+ (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText inView:(UIView *)view;
-+ (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay;
++ (MBProgressHUD *)showWithText:(NSString *)text detailText:(NSString * _Nullable)detailText inView:(UIView * _Nullable)view;
++ (MBProgressHUD *)showWithText:(NSString *)text 
+                     detailText:(NSString * _Nullable)detailText
+                         inView:(UIView * _Nullable)view
+                 hideAfterDelay:(NSTimeInterval)delay;
 
 #pragma mark - 带图标的提示
 
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon;
-+ (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon inView:(UIView *)view;
-+ (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon inView:(UIView *)view hideAfterDelay:(NSTimeInterval)delay;
++ (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon inView:(UIView * _Nullable)view;
++ (MBProgressHUD *)showWithText:(NSString * _Nullable)text 
+                           icon:(NSString * _Nullable)icon
+                         inView:(UIView * _Nullable)view
+                 hideAfterDelay:(NSTimeInterval)delay;
 
 /// 隐藏 tips
 + (void)hideAllTipsInView:(UIView *)view;
