@@ -94,7 +94,7 @@ const NSInteger AppHUDAutomaticallyHideSeconds = -1;
 //    return [self showInfo:text detailText:detailText inView:view hideAfterDelay:delay];
 }
 
-#pragma mark - 带图标的提示
+#pragma mark - 带图标的文本
 
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon {
     return [self showWithText:text icon:icon inView:WINDOW hideAfterDelay:AppHUDAutomaticallyHideSeconds];

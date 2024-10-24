@@ -12,7 +12,17 @@ extern const NSInteger AppHUDAutomaticallyHideSeconds;
 
 @interface MBProgressHUD (AppCategory)
 
-#pragma mark - Loading
+/*
+ hideAfterDelay 传参分三种情况如下:
+ - AppHUDAutomaticallyHideSeconds: 根据文本长度显示相应时长 (参见 secondsToHideWithText:)
+ - 0: 一直显示;
+ - 大于 0: 根据实际数值显示。
+ 
+ 在 showLoading 中默认 0；
+ 在 showWithText 中默认 AppHUDAutomaticallyHideSeconds.
+ */
+
+#pragma mark - 加载
 
 + (MBProgressHUD *)showLoading;
 + (MBProgressHUD *)showLoadingInView:(UIView * _Nullable)view;
@@ -29,7 +39,7 @@ extern const NSInteger AppHUDAutomaticallyHideSeconds;
                                 inView:(UIView * _Nullable)view
                         hideAfterDelay:(NSTimeInterval)delay;
 
-#pragma mark - Text
+#pragma mark - 文本
 
 + (MBProgressHUD *)showWithText:(NSString *)text;
 + (MBProgressHUD *)showWithText:(NSString *)text inView:(UIView * _Nullable)view;
@@ -42,7 +52,7 @@ extern const NSInteger AppHUDAutomaticallyHideSeconds;
                          inView:(UIView * _Nullable)view
                  hideAfterDelay:(NSTimeInterval)delay;
 
-#pragma mark - 带图标的提示
+#pragma mark - 带图标的文本
 
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon;
 + (MBProgressHUD *)showWithText:(NSString * _Nullable)text icon:(NSString * _Nullable)icon inView:(UIView * _Nullable)view;
