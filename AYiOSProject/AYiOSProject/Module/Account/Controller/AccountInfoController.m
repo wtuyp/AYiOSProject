@@ -110,9 +110,7 @@
         make.top.equalTo(itemViewContainerView.mas_bottom).offset(SCALE(36));
         make.bottom.mas_equalTo(0);
     }];
-
-
-    [itemViewContainerView verticalLayoutSubviewsWithItemHeight:SCALE(46) itemSpacing:0];
+    [itemViewContainerView verticalLayoutFillWidthSubviewsWithItemHeight:SCALE(46) itemSpacing:0 topSpacing:0 bottomSpacing:0 leadSpacing:0 tailSpacing:0];
 }
 
 #pragma mark - getter
