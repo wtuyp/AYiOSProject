@@ -12,6 +12,10 @@ const NSInteger AppHUDAutomaticallyHideSeconds = -1;
 
 #pragma mark - Loading
 
++ (MBProgressHUD *)showLoading {
+    return [self showLoadingWithText:nil detailText:nil inView:WINDOW hideAfterDelay:0];
+}
+
 + (MBProgressHUD *)showLoadingInView:(UIView *)view {
     return [self showLoadingWithText:nil detailText:nil inView:view hideAfterDelay:0];
 }

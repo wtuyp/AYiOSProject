@@ -14,6 +14,7 @@ extern const NSInteger AppHUDAutomaticallyHideSeconds;
 
 #pragma mark - Loading
 
++ (MBProgressHUD *)showLoading;
 + (MBProgressHUD *)showLoadingInView:(UIView * _Nullable)view;
 + (MBProgressHUD *)showLoadingInView:(UIView * _Nullable)view hideAfterDelay:(NSTimeInterval)delay;
 
