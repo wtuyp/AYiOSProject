@@ -33,4 +33,10 @@
 // key 前缀
 #define APP_KEY_PREFIX                  @"ay.app.key."
 
+// Universal Links
+#define URL_UNIVERSAL_LINK              @"https://api.app.com/app/ios/name"
+
+// URL Scheme
+#define APP_URL_SCHEME                  @"com.app.api.ios.name"
+
 #endif /* MacroConfig_h */
