@@ -37,4 +37,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+typedef NSInteger AppViewLevel NS_TYPED_EXTENSIBLE_ENUM;
+
+UIKIT_EXTERN const AppViewLevel AppViewLevelNaviView;   ///< 1000，自定义导航栏层级
+UIKIT_EXTERN const AppViewLevel AppViewLevelAlert;      ///< 2000，用于显示在自定义导航栏之上的视图
+
+@interface UIView (AppViewLevel)
+
+@property (nonatomic, assign) AppViewLevel viewLevel;    ///< 视图层级，默认 0
+
+@end
+
 NS_ASSUME_NONNULL_END

@@ -191,24 +191,31 @@
 
 @end
 
-@implementation UIViewController (JNNaviView)
+@implementation UIViewController (AppNaviView)
 
-//+ (void)load {
-//    Method originalMethod = class_getInstanceMethod(self, @selector(viewWillLayoutSubviews));
-//    Method swizzledMethod = class_getInstanceMethod(self, @selector(app_viewWillLayoutSubviews));
-//    method_exchangeImplementations(originalMethod, swizzledMethod);
-//}
++ (void)load {
+    Method originalMethod = class_getInstanceMethod(self, @selector(viewWillLayoutSubviews));
+    Method swizzledMethod = class_getInstanceMethod(self, @selector(app_viewWillLayoutSubviews));
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+}
 
-//- (void)app_viewWillLayoutSubviews {
-//    [self app_viewWillLayoutSubviews];
-//    [self.view bringSubviewToFront:self.naviView];
-//}
+- (void)app_viewWillLayoutSubviews {
+    [self app_viewWillLayoutSubviews];
+    [self.view bringSubviewToFront:self.naviView];
+    
+    for (UIView *view in self.view.subviews) {
+        if (view.viewLevel == AppViewLevelAlert) {
+            [self.view bringSubviewToFront:view];
+        }
+    }
+}
 
 - (AppNaviView *)naviView {
     return objc_getAssociatedObject(self, _cmd);
 }
 
 - (void)setNaviView:(AppNaviView *)naviView {
+    naviView.viewLevel = AppViewLevelNaviView;
     objc_setAssociatedObject(self, @selector(naviView), naviView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -219,6 +226,25 @@
     if (configBlock) {
         configBlock(self.naviView);
     }
+}
+
+@end
+
+const AppViewLevel AppViewLevelNaviView = 1000;
+const AppViewLevel AppViewLevelAlert = 2000;
+
+@implementation UIView (AppViewLevel)
+
+- (AppViewLevel)viewLevel {
+    NSNumber *level = objc_getAssociatedObject(self, _cmd);
+    if (!level) {
+        level = @0;
+    }
+    return [level integerValue];
+}
+
+- (void)setViewLevel:(AppViewLevel)viewLevel {
+    objc_setAssociatedObject(self, @selector(viewLevel), @(viewLevel), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
