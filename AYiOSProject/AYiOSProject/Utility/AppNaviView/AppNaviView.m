@@ -204,7 +204,7 @@
     [self.view bringSubviewToFront:self.naviView];
     
     for (UIView *view in self.view.subviews) {
-        if (view.viewLevel == AppViewLevelAlert) {
+        if (view.isAboveNaviView) {
             [self.view bringSubviewToFront:view];
         }
     }
@@ -215,7 +215,6 @@
 }
 
 - (void)setNaviView:(AppNaviView *)naviView {
-    naviView.viewLevel = AppViewLevelNaviView;
     objc_setAssociatedObject(self, @selector(naviView), naviView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -230,21 +229,19 @@
 
 @end
 
-const AppViewLevel AppViewLevelNaviView = 1000;
-const AppViewLevel AppViewLevelAlert = 2000;
 
-@implementation UIView (AppViewLevel)
+@implementation UIView (AppNaviView)
 
-- (AppViewLevel)viewLevel {
-    NSNumber *level = objc_getAssociatedObject(self, _cmd);
-    if (!level) {
-        level = @0;
+- (BOOL)isAboveNaviView {
+    NSNumber *isAbove = objc_getAssociatedObject(self, _cmd);
+    if (!isAbove) {
+        isAbove = @(NO);
     }
-    return [level integerValue];
+    return [isAbove boolValue];
 }
 
-- (void)setViewLevel:(AppViewLevel)viewLevel {
-    objc_setAssociatedObject(self, @selector(viewLevel), @(viewLevel), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setIsAboveNaviView:(BOOL)isAboveNaviView {
+    objc_setAssociatedObject(self, @selector(isAboveNaviView), @(isAboveNaviView), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
