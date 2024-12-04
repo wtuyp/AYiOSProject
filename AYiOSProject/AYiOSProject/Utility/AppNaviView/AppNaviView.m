@@ -235,7 +235,7 @@
 - (BOOL)isAboveNaviView {
     NSNumber *isAbove = objc_getAssociatedObject(self, _cmd);
     if (!isAbove) {
-        isAbove = @(NO);
+        return NO;
     }
     return [isAbove boolValue];
 }
