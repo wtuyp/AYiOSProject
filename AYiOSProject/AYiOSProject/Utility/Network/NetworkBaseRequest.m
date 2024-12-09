@@ -11,6 +11,12 @@
 
 #import "AccountManager.h"
 
+@interface NetworkBaseRequest ()
+
+@property (nonatomic, strong) NSMutableArray<NSDictionary *> *uploadConfigs;
+
+@end
+
 @implementation NetworkBaseRequest
 
 #pragma mark - override
@@ -25,7 +31,7 @@
     return YTKRequestMethodPOST;
 }
 
-/// 请求超时间隔，默认是15S
+/// 请求超时间隔，默认是15s
 - (NSTimeInterval)requestTimeoutInterval {
     return 15.0;
 }
@@ -58,9 +64,127 @@
     return YTKResponseSerializerTypeJSON;
 }
 
+- (AFConstructingBlock)constructingBodyBlock {
+    if (self.uploadConfigs.count == 0) {
+        return nil;
+    }
+    
+    return ^(id<AFMultipartFormData>  _Nonnull formData) {
+        for (NSDictionary *config in self.uploadConfigs) {
+            NSData *data = config[@"fileData"];
+            if (data) {
+                [formData appendPartWithFileData:data
+                                            name:config[@"key"]
+                                        fileName:config[@"fileName"]
+                                        mimeType:config[@"fileMIMEType"]];
+            }
+            
+            NSString *filePath = config[@"filePath"];
+            if (filePath) {
+                [formData appendPartWithFileURL:[NSURL fileURLWithPath:filePath]
+                                           name:config[@"key"]
+                                       fileName:config[@"fileName"]
+                                       mimeType:config[@"fileMIMEType"]
+                                          error:nil];
+            }
+        }
+    };
+}
+
 /// 需要忽略的属性名数组
 + (NSArray *)ignoreRequestModelPropertyNameArray {
     return nil;
+}
+
+#pragma mark - getter
+
+- (NSMutableArray<NSDictionary *> *)uploadConfigs {
+    if (!_uploadConfigs) {
+        _uploadConfigs = [[NSMutableArray alloc] init];
+    }
+    
+    return _uploadConfigs;
+}
+
+#pragma mark - public
+
+- (void)startRequest {
+    [[NetworkManager shared] startRequest:self];
+}
+
+- (void)startRequestWithSuccess:(SuccessHandler _Nullable)success failure:(FailureHandler _Nullable)failure {
+    self.success = success;
+    self.failure = failure;
+    [self startRequest];
+}
+
+- (void)stopRequest {
+    [[NetworkManager shared] stopRequest:self];
+}
+
+- (__kindof NetworkBaseRequest *)retryRequest {
+    NetworkBaseRequest *request = [self yy_modelCopy];
+    [request startRequestWithSuccess:self.success failure:self.failure];
+    return request;
+}
+
+- (void)addUploadConfigWithKey:(NSString *)key
+                      fileData:(NSData *)fileData
+                      fileName:(NSString *)fileName
+                  fileMIMEType:(NSString *)fileMIMEType {
+    [self removeUploadConfigWithKey:key];
+    
+    NSMutableDictionary *configDic = [[NSMutableDictionary alloc] init];
+    configDic[@"key"] = key;
+    configDic[@"fileData"] = fileData;
+    configDic[@"fileName"] = fileName;
+    configDic[@"fileMIMEType"] = fileMIMEType;
+    
+    [self.uploadConfigs addObject:configDic];
+}
+
+- (void)addUploadConfigWithKey:(NSString *)key
+                      filePath:(NSString *)filePath
+                      fileName:(NSString *)fileName
+                  fileMIMEType:(NSString *)fileMIMEType {
+    [self removeUploadConfigWithKey:key];
+    
+    NSMutableDictionary *configDic = [[NSMutableDictionary alloc] init];
+    configDic[@"key"] = key;
+    configDic[@"filePath"] = filePath;
+    configDic[@"fileName"] = fileName;
+    configDic[@"fileMIMEType"] = fileMIMEType;
+    
+    [self.uploadConfigs addObject:configDic];
+}
+
+- (void)removeUploadConfigWithKey:(NSString *)key {
+    NSDictionary *dic = nil;
+    for (NSDictionary *config in self.uploadConfigs) {
+        if ([config[@"key"] isEqualToString:key]) {
+            dic = config;
+            break;
+        }
+    }
+    
+    if (dic) {
+        [self.uploadConfigs removeObject:dic];
+    }
+}
+
+
+#pragma mark - private
+
+- (NSString *)description {
+    NSURLRequest *request = self.currentRequest;
+    
+    return [NSString stringWithFormat:@"<%@: %p>\n%@ %@\n%@\nBody:\n%@",
+            NSStringFromClass([self class]),
+            self,
+            request.HTTPMethod,
+            request.URL,
+            [request.allHTTPHeaderFields jsonStringPrettyWithoutEscapingSlashes],
+            [self.requestArgument jsonStringPrettyWithoutEscapingSlashes]];
 }
 
 #pragma mark - yymodel
@@ -97,65 +221,5 @@
     }
 }
 
-#pragma mark - public
-
-- (void)startRequest {
-    [[NetworkManager shared] startRequest:self];
-}
-
-- (void)startRequestWithSuccess:(SuccessHandler _Nullable)success failure:(FailureHandler _Nullable)failure {
-    self.success = success;
-    self.failure = failure;
-    [self startRequest];
-}
-
-- (void)stopRequest {
-    [[NetworkManager shared] stopRequest:self];
-}
-
-- (__kindof NetworkBaseRequest *)retryRequest {
-    NetworkBaseRequest *request = [self yy_modelCopy];
-    [request startRequestWithSuccess:self.success failure:self.failure];
-    return request;
-}
-
-- (void)setUploadConfigWithKey:(NSString *)key
-                      fileData:(NSData *)fileData
-                      fileName:(NSString *)fileName
-                  fileMIMEType:(NSString *)fileMIMEType {
-    self.constructingBodyBlock = ^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:fileData
-                                    name:key
-                                fileName:fileName
-                                mimeType:fileMIMEType];
-    };
-}
-
-- (void)setUploadConfigWithKey:(NSString *)key
-                      filePath:(NSString *)filePath
-                      fileName:(NSString *)fileName
-                  fileMIMEType:(NSString *)fileMIMEType {
-    self.constructingBodyBlock = ^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileURL:[NSURL fileURLWithPath:filePath] 
-                                   name:key
-                               fileName:fileName
-                               mimeType:fileMIMEType
-                                  error:nil];
-    };
-}
-
-#pragma mark - private
-
-- (NSString *)description {
-    NSURLRequest *request = self.currentRequest;
-    
-    return [NSString stringWithFormat:@"<%@: %p>\n%@ %@\n%@\nBody:\n%@",
-            NSStringFromClass([self class]),
-            self,
-            request.HTTPMethod,
-            request.URL,
-            [request.allHTTPHeaderFields jsonStringPrettyWithoutEscapingSlashes],
-            [self.requestArgument jsonStringPrettyWithoutEscapingSlashes]];
-}
 
 @end

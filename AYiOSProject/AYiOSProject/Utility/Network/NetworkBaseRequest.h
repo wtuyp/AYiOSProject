@@ -34,16 +34,19 @@ typedef void (^FailureHandler)(NSInteger statusCode, NSString * _Nullable messag
 - (__kindof NetworkBaseRequest *)retryRequest;
 
 /// 上传文件时配置，使用 NSData
-- (void)setUploadConfigWithKey:(NSString *)key
+- (void)addUploadConfigWithKey:(NSString *)key
                       fileData:(NSData *)fileData
                       fileName:(NSString *)fileName
                   fileMIMEType:(NSString *)fileMIMEType;
 
 /// 上传文件时配置，使用 文件路径
-- (void)setUploadConfigWithKey:(NSString *)key
+- (void)addUploadConfigWithKey:(NSString *)key
                       filePath:(NSString *)filePath
                       fileName:(NSString *)fileName
                   fileMIMEType:(NSString *)fileMIMEType;
+
+/// 删除上传配置
+- (void)removeUploadConfigWithKey:(NSString *)key;
 
 /// 请求时需要忽略的属性名，用于有值但不用发送的时候
 + (NSArray * _Nullable)ignoreRequestModelPropertyNameArray;
