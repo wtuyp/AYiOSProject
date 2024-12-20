@@ -83,7 +83,6 @@
 		EBD3C6CF2BC7D20400A24298 /* UIView+AYDataState.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5112BC7D20400A24298 /* UIView+AYDataState.m */; };
 		EBD3C6D02BC7D20400A24298 /* AYLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5142BC7D20400A24298 /* AYLabelView.m */; };
 		EBD3C6D12BC7D20400A24298 /* AYPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5172BC7D20400A24298 /* AYPopupController.m */; };
-		EBD3C6D22BC7D20400A24298 /* UIView+AYPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5192BC7D20400A24298 /* UIView+AYPopupController.m */; };
 		EBD3C6D82BC7D20400A24298 /* NetworkBasePageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C52C2BC7D20400A24298 /* NetworkBasePageRequest.m */; };
 		EBD3C6D92BC7D20400A24298 /* NetworkBasePageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C52E2BC7D20400A24298 /* NetworkBasePageResponse.m */; };
 		EBD3C6DA2BC7D20400A24298 /* NetworkBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5302BC7D20400A24298 /* NetworkBaseRequest.m */; };
@@ -95,6 +94,7 @@
 		EBD3C6E22BC7D20400A24298 /* AppUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5452BC7D20400A24298 /* AppUtils.m */; };
 		EBD3C6E32BC7D20400A24298 /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C5472BC7D20400A24298 /* UIUtils.m */; };
 		EBD3C7202BC8C1BD00A24298 /* CaptchaValidateApi.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD3C71E2BC8C1BC00A24298 /* CaptchaValidateApi.m */; };
+		EBF77E5C2D150F9A00C05B5F /* UIView+AppPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF77E5B2D150F9A00C05B5F /* UIView+AppPopup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,8 +257,6 @@
 		EBD3C5142BC7D20400A24298 /* AYLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYLabelView.m; sourceTree = "<group>"; };
 		EBD3C5162BC7D20400A24298 /* AYPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYPopupController.h; sourceTree = "<group>"; };
 		EBD3C5172BC7D20400A24298 /* AYPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYPopupController.m; sourceTree = "<group>"; };
-		EBD3C5182BC7D20400A24298 /* UIView+AYPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AYPopupController.h"; sourceTree = "<group>"; };
-		EBD3C5192BC7D20400A24298 /* UIView+AYPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AYPopupController.m"; sourceTree = "<group>"; };
 		EBD3C5232BC7D20400A24298 /* MacroObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacroObjc.h; sourceTree = "<group>"; };
 		EBD3C52B2BC7D20400A24298 /* NetworkBasePageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkBasePageRequest.h; sourceTree = "<group>"; };
 		EBD3C52C2BC7D20400A24298 /* NetworkBasePageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkBasePageRequest.m; sourceTree = "<group>"; };
@@ -283,6 +281,8 @@
 		EBD3C6E62BC7D2C800A24298 /* AYiOSProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AYiOSProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBD3C71E2BC8C1BC00A24298 /* CaptchaValidateApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptchaValidateApi.m; sourceTree = "<group>"; };
 		EBD3C71F2BC8C1BD00A24298 /* CaptchaValidateApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptchaValidateApi.h; sourceTree = "<group>"; };
+		EBF77E5A2D150F9A00C05B5F /* UIView+AppPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AppPopup.h"; sourceTree = "<group>"; };
+		EBF77E5B2D150F9A00C05B5F /* UIView+AppPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AppPopup.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -989,8 +989,8 @@
 			children = (
 				EBD3C5162BC7D20400A24298 /* AYPopupController.h */,
 				EBD3C5172BC7D20400A24298 /* AYPopupController.m */,
-				EBD3C5182BC7D20400A24298 /* UIView+AYPopupController.h */,
-				EBD3C5192BC7D20400A24298 /* UIView+AYPopupController.m */,
+				EBF77E5A2D150F9A00C05B5F /* UIView+AppPopup.h */,
+				EBF77E5B2D150F9A00C05B5F /* UIView+AppPopup.m */,
 			);
 			path = AYPopupContoller;
 			sourceTree = "<group>";
@@ -1206,7 +1206,6 @@
 				EBD3C6292BC7D20400A24298 /* AccountInfoModel.m in Sources */,
 				EBD3C6CD2BC7D20400A24298 /* AYDataStateConfig.m in Sources */,
 				EBD3C54C2BC7D20400A24298 /* MBProgressHUD+AppCategory.m in Sources */,
-				EBD3C6D22BC7D20400A24298 /* UIView+AYPopupController.m in Sources */,
 				EBD3C6DD2BC7D20400A24298 /* AppRefreshFooterView.m in Sources */,
 				EBD3C5502BC7D20400A24298 /* NSObject+YYModelAdd.m in Sources */,
 				EBD3C6C92BC7D20400A24298 /* AppAgreementPopupView.m in Sources */,
@@ -1267,6 +1266,7 @@
 				EBD3C5512BC7D20400A24298 /* NSString+AppCategory.m in Sources */,
 				EBD3C5542BC7D20400A24298 /* UIImage+AppCategory.m in Sources */,
 				EBD3C62A2BC7D20400A24298 /* AccountManager.m in Sources */,
+				EBF77E5C2D150F9A00C05B5F /* UIView+AppPopup.m in Sources */,
 				EBD3C6C42BC7D20400A24298 /* AppAlert.m in Sources */,
 				EBD3C6C62BC7D20400A24298 /* AppIndexDataModel.m in Sources */,
 				EB9F55C22BCCB78900333706 /* GradientView.m in Sources */,

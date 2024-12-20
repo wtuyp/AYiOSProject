@@ -47,7 +47,7 @@
 #import "UITextField+ZGExtand.h"
 #import "UIView+AppCategory.h"
 #import "UIView+AppLayout.h"
-#import "UIView+AYPopupController.h"
+#import "UIView+AppPopup.h"
 #import "UIView+AYDataState.h"
 
 #import "AppBaseNavigationController.h"
