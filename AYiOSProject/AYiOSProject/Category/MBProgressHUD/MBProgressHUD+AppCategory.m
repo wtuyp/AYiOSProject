@@ -43,7 +43,7 @@ const NSInteger AppHUDAutomaticallyHideSeconds = -1;
     hud.detailsLabel.text = detailText;
     [hud showAnimated:YES];
     if (delay == AppHUDAutomaticallyHideSeconds) {
-        CGFloat delay = [self secondsToHideWithText:text];
+        NSTimeInterval delay = [self secondsToHideWithText:text];
         [hud hideAnimated:YES afterDelay:delay];
     } else if (delay > 0) {
         [hud hideAnimated:YES afterDelay:delay];
@@ -84,7 +84,7 @@ const NSInteger AppHUDAutomaticallyHideSeconds = -1;
     hud.detailsLabel.text = detailText;
     [hud showAnimated:YES];
     if (delay == AppHUDAutomaticallyHideSeconds) {
-        CGFloat delay = [self secondsToHideWithText:text];
+        NSTimeInterval delay = [self secondsToHideWithText:text];
         [hud hideAnimated:YES afterDelay:delay];
     } else if (delay > 0) {
         [hud hideAnimated:YES afterDelay:delay];
@@ -111,7 +111,7 @@ const NSInteger AppHUDAutomaticallyHideSeconds = -1;
                                                labelText:text];
     [hud showAnimated:YES];
     if (delay == AppHUDAutomaticallyHideSeconds) {
-        CGFloat delay = [self secondsToHideWithText:text];
+        NSTimeInterval delay = [self secondsToHideWithText:text];
         [hud hideAnimated:YES afterDelay:delay];
     } else if (delay > 0) {
         [hud hideAnimated:YES afterDelay:delay];
