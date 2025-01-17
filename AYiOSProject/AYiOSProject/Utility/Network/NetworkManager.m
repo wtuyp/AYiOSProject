@@ -50,11 +50,11 @@ NSString *const NetworkResponseParamData = @"data";
 #endif
     request.delegate = (id<YTKRequestDelegate>)self;
     [request start];
-    NSLog(@"\nRequest start: %@", request);
+    NSLog(@"Request start: %@", request);
 }
 
 - (void)stopRequest:(NetworkBaseRequest *)request {
-    NSLog(@"\nRequest stop: %@", request);
+    NSLog(@"Request stop: %@", request);
     [request stop];
 }
 
@@ -109,7 +109,7 @@ NSString *const NetworkResponseParamData = @"data";
     if ([task.response isKindOfClass:[NSHTTPURLResponse class]]) {
         statusCode = [(NSHTTPURLResponse *)task.response statusCode];
     }
-    NSLog(@"\n--------------------\nRequest response:%@ [%.3f s] code: %li\nurl: %@\n%@\n--------------------",
+    NSLog(@"Request response: %@ [%.3f s] code: %li\nurl: %@\n%@",
          [requestStartDate stringWithFormat:@"yyyy-MM-dd HH:mm:ss.SSS"],
          duration,
          (long)statusCode,
@@ -151,7 +151,7 @@ NSString *const NetworkResponseParamData = @"data";
                     responseData = [class yy_modelWithDictionary:responseDic];
                 }
             } else {
-                NSLog(@"--------------------\n网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口\n--------------------");
+                NSLog(@"网络请求返回字段data，不是 NSDictionary / NSArray 数据类型，请调整接口");
 //                !request.failure ?: request.failure(NetworkErrorFormat, @"响应数据异常", responseData);
 //                !request.failure ?: request.failure(NetworkErrorFormat, nil, nil);
 //                return;
@@ -168,10 +168,10 @@ NSString *const NetworkResponseParamData = @"data";
     if (statusCode == NetworkResponseStatusCodeOffline
         || statusCode == NetworkResponseStatusCodeNoAccess) {
         !request.failure ?: request.failure(statusCode, message, data);
-        NSTimeInterval delay = [MBProgressHUD secondsToHideWithText:message];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self _handleOffline];
-        });
+        [YTKNetworkAgent.sharedAgent cancelAllRequests];
+        [MBProgressHUD showWithText:message];
+        [self _handleOffline];
+        
         return;
     }
     if (statusCode == NetworkResponseStatusCodeTokenExpired) {
