@@ -42,12 +42,19 @@
 }
 
 - (void)removeMiddleTopViewControllersWithCount:(NSUInteger)count {
+    if (count == 0) {
+        return;
+    }
+    
     NSMutableArray *viewControllers = [self.viewControllers mutableCopy];
     NSUInteger controllersCount = viewControllers.count;
-    if (controllersCount > (count + 1)) {
-        [viewControllers removeObjectsInRange:NSMakeRange(controllersCount - count - 1, count)];
-        self.viewControllers = viewControllers;
+    
+    if (count > (controllersCount - 2)) {   // 移除数量大于中间的控制器数量时，设置最大移除数量
+        count = controllersCount - 2;
     }
+    
+    [viewControllers removeObjectsInRange:NSMakeRange(controllersCount - count - 1, count)];
+    self.viewControllers = viewControllers;
 }
 
 @end
