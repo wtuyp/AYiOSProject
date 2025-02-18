@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 网络请求管理
 @interface NetworkManager : NSObject
 
-@property (nonatomic, copy, nullable) NSString *baseUrl;    ///< 域名，优化级低于 NetworkBaseRequest 的 baseUrl
+@property (nonatomic, copy, nullable) NSString *baseUrl;    ///< 域名，优先级低于 NetworkBaseRequest 的 baseUrl
 
 + (instancetype)shared;
 - (instancetype)init NS_UNAVAILABLE;
