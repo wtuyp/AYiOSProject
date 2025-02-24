@@ -41,7 +41,31 @@ const NSInteger TableViewDataDefaultPageSize = 15;
     } else {
         self.pageIndex++;
     }
-    [self.dataArray addObjectsFromArray:array];
+    
+    if (array.count > 0) {
+        [self.dataArray addObjectsFromArray:array];
+    }
+    [self endRefreshing];
+}
+
+- (void)addPageDataArray:(NSArray *)array dataIdKey:(NSString *)dataIdKey hasMore:(BOOL)hasMore isRefresh:(BOOL)isRefresh {
+    self.hasMore = hasMore;
+    if (isRefresh) {
+        self.firstDataId = nil;
+        self.lastDataId = nil;
+        [self.dataArray removeAllObjects];
+    }
+    
+    if (array.count > 0) {
+        if (isRefresh) {
+            self.firstDataId = [array.firstObject valueForKey:dataIdKey];
+            self.lastDataId = [array.lastObject valueForKey:dataIdKey];
+        } else {
+            self.lastDataId = [array.lastObject valueForKey:dataIdKey];
+        }
+        
+        [self.dataArray addObjectsFromArray:array];
+    }
     [self endRefreshing];
 }
 
@@ -94,6 +118,30 @@ const NSInteger TableViewDataDefaultPageSize = 15;
 
 - (void)setHasMore:(BOOL)hasMore {
     objc_setAssociatedObject(self, @selector(hasMore), @(hasMore), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)firstDataId {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setFirstDataId:(id)firstDataId {
+    if (!firstDataId) {
+        return;
+    }
+    
+    objc_setAssociatedObject(self, @selector(firstDataId), firstDataId, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)lastDataId {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setLastDataId:(id)lastDataId {
+    if (!lastDataId) {
+        return;
+    }
+    
+    objc_setAssociatedObject(self, @selector(lastDataId), lastDataId, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

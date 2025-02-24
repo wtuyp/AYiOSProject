@@ -22,11 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) NSInteger nextPageIndex;    ///< 下一页序号
 @property (nonatomic, assign, readonly) BOOL hasMore;               ///< 是否有更多数据
 
+// 使用 page 会引起列表数据重复或丢失，建议使用 id 来处理。
+@property (nonatomic, strong, nullable) id firstDataId;             ///< 第一条数据 Id
+@property (nonatomic, strong, nullable) id lastDataId;              ///< 最后一条数据 Id
+
+
 /// 根据刷新情况返回对应分页序号
 - (NSInteger)pageIndexWithRefresh:(BOOL)refresh;
 
-/// 更新数据
+/// 更新数据（使用 pageIndex 时）
 - (void)addPageDataArray:(NSArray *)array hasMore:(BOOL)hasMore isRefresh:(BOOL)isRefresh;
+
+/// 更新数据（使用 dataId 时）
+- (void)addPageDataArray:(NSArray *)array dataIdKey:(NSString *)dataIdKey hasMore:(BOOL)hasMore isRefresh:(BOOL)isRefresh;
 
 /// 结束 刷新 或 加载更多
 - (void)endRefreshing;
