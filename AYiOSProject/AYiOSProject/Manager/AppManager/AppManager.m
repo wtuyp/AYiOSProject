@@ -126,7 +126,7 @@ static NSString *const AppFirstLaunchKey = APP_KEY_PREFIX@"manager.first_launch"
 - (void)accountLogout {
     [NSNotificationCenter.defaultCenter postNotificationName:NOTIFY_ACCOUNT_LOGOUT object:nil];
 
-    [AccountManager.shared logout];
+    [AccountManager.shared clear];
     UIApplication.sharedApplication.applicationIconBadgeNumber = 0;
     
     // 其他退出登录

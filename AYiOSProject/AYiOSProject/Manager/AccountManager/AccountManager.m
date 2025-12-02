@@ -10,7 +10,8 @@
 #import "AccountInfoApi.h"
 #import "LogoutApi.h"
 
-static NSString *const AccountAccessTokenKey = APP_KEY_PREFIX@"account.access.token";
+static NSString *const AccountAccessTokenKey = APP_KEY_PREFIX@"account.token.access";
+static NSString *const AccountRefreshTokenKey = APP_KEY_PREFIX@"account.token.refresh";
 static NSString *const AccountInfoKey = APP_KEY_PREFIX@"account.info";
 
 @interface AccountManager ()
@@ -40,6 +41,7 @@ static NSString *const AccountInfoKey = APP_KEY_PREFIX@"account.info";
 
 - (void)loadData {
     self.accessToken = [[MMKV defaultMMKV] getStringForKey:AccountAccessTokenKey];
+    self.refeshToken = [[MMKV defaultMMKV] getStringForKey:AccountRefreshTokenKey];
     
     NSString *infoJSONString = [[MMKV defaultMMKV] getStringForKey:AccountInfoKey];
     _account = [AccountInfoModel yy_modelWithJSON:infoJSONString];
@@ -54,6 +56,15 @@ static NSString *const AccountInfoKey = APP_KEY_PREFIX@"account.info";
     }
 }
 
+- (void)setRefeshToken:(NSString *)token {
+    _refeshToken = token;
+    if (_refeshToken) {
+        [[MMKV defaultMMKV] setString:_refeshToken forKey:AccountRefreshTokenKey];
+    } else {
+        [[MMKV defaultMMKV] removeValueForKey:AccountRefreshTokenKey];
+    }
+}
+
 - (void)updateAccount:(AccountInfoModel * _Nullable)account {
     _account = account;
     if (account) {
@@ -63,8 +74,9 @@ static NSString *const AccountInfoKey = APP_KEY_PREFIX@"account.info";
     }
 }
 
-- (void)logout {
+- (void)clear {
     self.accessToken = nil;
+    self.refeshToken = nil;
     [self updateAccount:nil];
 }
 

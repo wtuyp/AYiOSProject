@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly, nullable) AccountInfoModel *account;  ///< 账户信息
 @property (nonatomic, copy, nullable) NSString *accessToken;                ///< 访问 token
+@property (nonatomic, copy, nullable) NSString *refeshToken;                ///< 刷新 token
 
 + (instancetype)shared;
 - (instancetype)init NS_UNAVAILABLE;
@@ -25,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateAccount:(AccountInfoModel * _Nullable)account;
 
 /// 退出登录
-- (void)logout;
+- (void)clear;
 
 /// 是否登录
 - (BOOL)isLogin;
